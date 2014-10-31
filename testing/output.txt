@@ -1,0 +1,48 @@
+between x and y in meters:  0.0
+dist from origin for x: 19209.55564782927
+dist from origin for y: 19209.55564782927
+Closest haircut place_id:  ChIJP3vh_dUA3okRt31mokQWFAc
+Closest grocery shopping id:  ChIJP3vh_dUA3okRp-bK4gbkZWE
+
+between x and y in meters:  6.113071742392583
+dist from origin for x: 16290.864729514147
+dist from origin for y: 16294.843690717735
+Closest haircut place_id:  ChIJl4ULGXYU3okRgN4letujDds
+Closest grocery shopping id:  ChIJzxhVU3YU3okR4COSLbBk65w
+
+between x and y in meters:  6.874536156337666
+dist from origin for x: 9609.913348720242
+dist from origin for y: 9607.191783305507
+Closest haircut place_id:  ChIJN25TfC0K3okRVJNiyQ2A4s8
+Closest grocery shopping id:  ChIJRcgEfS0K3okRpiBQAIfdbaQ
+
+between x and y in meters:  12.993723299583193
+dist from origin for x: 6233.492643327551
+dist from origin for y: 6243.627012858119
+Closest haircut place_id:  ChIJ04JrgzEM3okRaXPMdBx9kYc
+Closest grocery shopping id:  ChIJk83kDzEM3okRty_lisDM87g
+
+between x and y in meters:  23.732444646262024
+dist from origin for x: 1112.288397773147
+dist from origin for y: 1119.9637819175678
+Closest haircut place_id:  ChIJOfRbaJgP3okR8FBQUhyckEY
+Closest grocery shopping id:  ChIJX18TXZgP3okR0Re1LXOJbno
+
+between x and y in meters:  35.483779933054734
+dist from origin for x: 381.3940294674654
+dist from origin for y: 372.1987758976331
+Closest haircut place_id:  ChIJnVJWtQcP3okRd5vD8EIHTts
+Closest grocery shopping id:  ChIJJ6GptgcP3okR4x2cJTYBQoE
+
+between x and y in meters:  53.10531878667384
+dist from origin for x: 220.88345931054656
+dist from origin for y: 209.63899167813256
+Closest haircut place_id:  ChIJqdMmQagP3okR-aISLqtZhMw
+Closest grocery shopping id:  ChIJFY-C_wcP3okReWLUK5gXq_o
+
+between x and y in meters:  244.0822165585017
+dist from origin for x: 220.88345931054656
+dist from origin for y: 197.90142649528548
+Closest haircut place_id:  ChIJqdMmQagP3okR-aISLqtZhMw
+Closest grocery shopping id:  ChIJr_LGx6cP3okRuo3sDuDuauM
+

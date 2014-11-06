@@ -6,38 +6,20 @@ import math
 import time
 search_radius = 17000.0
  
-#// Add all coordinates to a list, converting them to meters:
-#points = []
-#for p in coords:
-#  PointLatLng p = new PointLatLng(
-#    coord.Longitude * (System.Math.PI * 6378137 / 180),
-#    coord.Latitude * (System.Math.PI * 6378137 / 180)
-#  );
-#  points.Add(p);
-#}
-#// Add point 0 to the end again:
-#points.append(points[0]);
 class gThread(multiprocessing.Process):
-  def __init__(self, list, tid, sublist):
+  def __init__(self, list, tid, queue):
     multiprocessing.Process.__init__(self)
     self.tid = tid
     self.list = list
-    self.queue = sublist
+    self.queue = queue
   def run(self):
     tmp = []
     for x in self.list:
-      #print(self.tid)
       geodatas = list(x)
       delta = compute_displacement(geodatas)
       ga = Geoarea(geodatas, delta)
       tmp.append(ga)
-      #self.conn.send(ga)
-      #print("tid: ", self.tid, "finished sending!!")
-    #print("DONE COMPILING LIST; SENDING NOW!", len(tmp))
-    #self.conn.send(tmp)
     self.queue.put(tmp)
-    
-    print("tid: ",self.tid," DONE???")
 
 ocords = (42.730678, -73.686662)
 class Geoarea:
@@ -166,42 +148,27 @@ def main():
   
   geoareas = []
   mpq = multiprocessing.Queue()
-  chunklen = 6
-  while len(product) % chunklen != 0:
-    chunklen = chunklen + 1
-  chunk = int(len(product)/chunklen)
+  nprocs = 20
+  chunksize = int(math.ceil(len(product) / float(nprocs)))
   
-  print("set chunk length = ", chunk)
-  #pool = Pool(processes=chunklen)
-  start = 0
-  end = chunk
   threads = []
-  i = 0
-  for i in range(chunklen):#for i in range(chunks):
-    c = product[start:end]
-    print("start, end: ", start, end)
+  for i in range(nprocs):#for i in range(chunks):
+    c = product[chunksize * i:chunksize * (i + 1)]
     t = gThread(c, i, mpq)
-    i = i + 1
     t.start()
     threads.append(t)
-    start = end + 1
-    end = end + chunk
   
-  for i in range(chunklen):
-    tmp = mpq.get()
-    #print("queue len:", len(tmp))
-    geoareas.extend(tmp)
+  for i in range(nprocs):
+    geoareas.extend(mpq.get())
   
-  print("LEN GEOAREAS:", len(geoareas))
   for t in threads:
     t.join()
-    print(t.tid, "joined...")
   
   print("PRE-SORT TIME DELTA:", str(time.time() - start_time))
   sortedareas = sorted(geoareas, key=lambda x: x.delta)
   print("POST-SORT TIME DELTA:", str(time.time() - start_time))
 
-  for x in range(50):
+  for x in range(5):
     print(sortedareas[x], file=output)
   
   output.close()

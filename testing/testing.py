@@ -4,6 +4,7 @@ import json
 import itertools
 import math
 import time
+import sys
 search_radius = 17000.0
  
 class gThread(multiprocessing.Process):
@@ -54,25 +55,6 @@ def build_geodata(json):
     geodatas.append(g)
   return sorted(geodatas, key=lambda x: x.origin_dist)
 
-def top5_closest(first, second):
-  closest_dist = -1.0
-  closest = []
-  old_origin_dist = ()
-  modifier = 5.0
-  
-  for x in first:
-    for y in second:
-      dist = distance(x.coords, y.coords).meters
-      #if  x.origin_dist > search_radius/2 or y.origin_dist > search_radius/2:
-      #continue
-      if closest_dist == -1.0 or dist < closest_dist:
-        closest.append((x, y, dist))
-        closest_dist = dist
-        old_origin_dist = (x.origin_dist, y.origin_dist)
-  
-  sortedlist = sorted(closest, key=lambda x: x[2])
-  return sortedlist#return (closest_dist, closest[0], closest[1])
-
 def compute_displacement(list):
   d = 0.0
   points = list
@@ -85,73 +67,38 @@ def compute_displacement(list):
     d = d + dtmp
   return d
 
-def compute_area(list):
-  #print(list)
-  points = list
-  points.append(points[0])
-  plen = len(points) - 1
-  #print(plen)
-  #for x in points:
-  #print(x)
-  step1 = []
-  i = 0
-  unsim = []
-  sim = []
-  
-  for i in range(plen):
-    if (points[i + 1].place_id != points[i].place_id) and (points[i + 1].lat == points[i].lat) and (points[i + 1].lng == points[i].lng):
-      sim.extend([i, i+1])
-    else:
-      if i not in sim:
-        unsim.append(i)
-    sub1 = ((points[i + 1].clat - points[i].clat) * (points[i + 1].clng + points[i].clng))
-   # i = i + 1
-    #print(sub1)
-    step1.append(sub1)
-  if len(sim) >= plen - 1:
-    if len(unsim) > 0: #should always be 1 at this point, since >1 means we have enough points for at least a triangle, and we wouldnt be in this conditional in the first place
-      c1 = (points[unsim[0]].lat, points[unsim[0]].lng)
-      c2 = (points[sim[-1]].lat, points[sim[-1]].lng)
-      area = distance(c1, c2).meters
-    else:
-      area = 0.000001 #all in almost exact same loc?
-  
-  else:
-    area = abs(sum(step1) / 2)
-  
-  return area
-    
-
 def main():
   f1 = open("haircut.json")
   f2 = open("grocery.json")  
   f3 = open("car_wash.json")
+  
   start_time = time.time()
+  
   output = open("output.txt",'w')
+  
   hjson = (json.load(f1))["results"]
   gsjson = (json.load(f2))["results"]
   gamestopjson = (json.load(f3))["results"]
-  #print(hjson, file=output)
+
   haircut_geodata = build_geodata(hjson)
   grocery_geodata = build_geodata(gsjson)
   gamestop_geodata = build_geodata(gamestopjson)
-  #top5 = top5_closest(haircut_geodata, grocery_geodata)
+
   origin_coords = Geodata(42.730678, -73.686662)
   tlist = [haircut_geodata, grocery_geodata, gamestop_geodata]#haircut_geodata + grocery_geodata + gamestop_geodata
-  #tlist = sorted(tlist, key=lambda x: x.origin_dist)
-  #tlist.extend(haircut_geodata)
-  #tlist.extend(grocery_geodata)
-  #tlist.extend(gamestop_geodata)
-  #print(tlist, file=output)
-  print(len(tlist))
   product = list(itertools.product(*tlist))
   
   geoareas = []
   mpq = multiprocessing.Queue()
-  nprocs = 20
+
+  if(len(sys.argv) == 2):
+    nprocs = int(sys.argv[1])
+  else:
+    nprocs = 10
+
   chunksize = int(math.ceil(len(product) / float(nprocs)))
-  
   threads = []
+  
   for i in range(nprocs):#for i in range(chunks):
     c = product[chunksize * i:chunksize * (i + 1)]
     t = gThread(c, i, mpq)

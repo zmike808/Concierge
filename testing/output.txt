@@ -1,48 +1,500 @@
-between x and y in meters:  0.0
-dist from origin for x: 19209.55564782927
-dist from origin for y: 19209.55564782927
-Closest haircut place_id:  ChIJP3vh_dUA3okRt31mokQWFAc
-Closest grocery shopping id:  ChIJP3vh_dUA3okRp-bK4gbkZWE
+Total displacement without origin: 271.4723824855997
+(lat,lng): (42.714326, -73.812327)
+origin_dist: 10451.897022550831 id: f44283bad0d41e6548728280ac917025ca57fdd9 pid: ChIJX4T8pJ4M3okR2Q-Wp4CyA2A
+(lat,lng): (42.714306, -73.812085)
+origin_dist: 10432.766471255296 id: 36246ea4bb738a83c733a984df1179759960b17b pid: ChIJ0zgYpJ4M3okRKVGOYoBWg38
+(lat,lng): (42.715151, -73.811174)
+origin_dist: 10343.16461087365 id: 3aecf81b50eb73262833d542ceeefb5809e78579 pid: ChIJb_Gn85sM3okRzjTG-dEq9UA
+(lat,lng): (42.714326, -73.812327)
+origin_dist: 10451.897022550831 id: f44283bad0d41e6548728280ac917025ca57fdd9 pid: ChIJX4T8pJ4M3okR2Q-Wp4CyA2A
 
-between x and y in meters:  6.113071742392583
-dist from origin for x: 16290.864729514147
-dist from origin for y: 16294.843690717735
-Closest haircut place_id:  ChIJl4ULGXYU3okRgN4letujDds
-Closest grocery shopping id:  ChIJzxhVU3YU3okR4COSLbBk65w
+Total displacement without origin: 278.0445444437097
+(lat,lng): (42.706917, -73.777726)
+origin_dist: 7912.466588165269 id: e1827ee39773c5a23fba013471363c2052d84876 pid: ChIJg6W3cnYM3okRxIJOY96FKls
+(lat,lng): (42.706787, -73.777619)
+origin_dist: 7909.046220138476 id: 607ec6e0ffd71ce7e4a0e0a3177a99c7487d753a pid: ChIJg6W3cnYM3okR3N7JmYqn3V4
+(lat,lng): (42.70576, -73.777083)
+origin_dist: 7906.971944509743 id: d447785236db0cb6af7261d21ff2f5a7534d0808 pid: ChIJhRM1_HUM3okRAaDeS5qiDYE
+(lat,lng): (42.706917, -73.777726)
+origin_dist: 7912.466588165269 id: e1827ee39773c5a23fba013471363c2052d84876 pid: ChIJg6W3cnYM3okRxIJOY96FKls
 
-between x and y in meters:  6.874536156337666
-dist from origin for x: 9609.913348720242
-dist from origin for y: 9607.191783305507
-Closest haircut place_id:  ChIJN25TfC0K3okRVJNiyQ2A4s8
-Closest grocery shopping id:  ChIJRcgEfS0K3okRpiBQAIfdbaQ
+Total displacement without origin: 323.5487655920993
+(lat,lng): (42.714326, -73.812327)
+origin_dist: 10451.897022550831 id: f44283bad0d41e6548728280ac917025ca57fdd9 pid: ChIJX4T8pJ4M3okR2Q-Wp4CyA2A
+(lat,lng): (42.714306, -73.812085)
+origin_dist: 10432.766471255296 id: 36246ea4bb738a83c733a984df1179759960b17b pid: ChIJ0zgYpJ4M3okRKVGOYoBWg38
+(lat,lng): (42.715666, -73.811946)
+origin_dist: 10396.144159860442 id: 5bcb2b891ca64fae729379bf1cf2b2e567e90a69 pid: ChIJLb67-5sM3okRcbUpZy-tvzc
+(lat,lng): (42.714326, -73.812327)
+origin_dist: 10451.897022550831 id: f44283bad0d41e6548728280ac917025ca57fdd9 pid: ChIJX4T8pJ4M3okR2Q-Wp4CyA2A
 
-between x and y in meters:  12.993723299583193
-dist from origin for x: 6233.492643327551
-dist from origin for y: 6243.627012858119
-Closest haircut place_id:  ChIJ04JrgzEM3okRaXPMdBx9kYc
-Closest grocery shopping id:  ChIJk83kDzEM3okRty_lisDM87g
+Total displacement without origin: 326.76278397054773
+(lat,lng): (42.747166, -73.759886)
+origin_dist: 6269.489247350134 id: e7ba3623969bcb104cf22a8211cfe5d701d8f252 pid: ChIJZ577Ic4N3okR1u6TWcfz5Ao
+(lat,lng): (42.746357, -73.758462)
+origin_dist: 6131.972467852192 id: f0225c02487a3ab7046c7d8607e3a2abd8002b4e pid: ChIJbSMw69EN3okRv7liXs5kuCI
+(lat,lng): (42.747359, -73.759436)
+origin_dist: 6240.581549901486 id: 46de5e79f26b98b8bd4e0b236a80b990e4a3a283 pid: ChIJiZWt2dEN3okR1GbpoMafFoc
+(lat,lng): (42.747166, -73.759886)
+origin_dist: 6269.489247350134 id: e7ba3623969bcb104cf22a8211cfe5d701d8f252 pid: ChIJZ577Ic4N3okR1u6TWcfz5Ao
 
-between x and y in meters:  23.732444646262024
-dist from origin for x: 1112.288397773147
-dist from origin for y: 1119.9637819175678
-Closest haircut place_id:  ChIJOfRbaJgP3okR8FBQUhyckEY
-Closest grocery shopping id:  ChIJX18TXZgP3okR0Re1LXOJbno
+Total displacement without origin: 338.4088031519466
+(lat,lng): (42.868849, -73.818832)
+origin_dist: 18775.065485471718 id: a1d62b5d5887471bc8e33d6ea27e89e86a90b777 pid: ChIJ09BHG6IU3okRHCsfmVbi1Qs
+(lat,lng): (42.869024, -73.819498)
+origin_dist: 18822.354911676626 id: 7a8100b5d3ce87f110152cf23fd97e6f501f5803 pid: ChIJ09BHG6IU3okR70nRSp3B1MQ
+(lat,lng): (42.869083, -73.817467)
+origin_dist: 18732.30210239499 id: 84c961dc284b921cb1de9d5f7503f6c98ca20355 pid: ChIJaSvkmZgU3okRmpka-3JuTF0
+(lat,lng): (42.868849, -73.818832)
+origin_dist: 18775.065485471718 id: a1d62b5d5887471bc8e33d6ea27e89e86a90b777 pid: ChIJ09BHG6IU3okRHCsfmVbi1Qs
 
-between x and y in meters:  35.483779933054734
-dist from origin for x: 381.3940294674654
-dist from origin for y: 372.1987758976331
-Closest haircut place_id:  ChIJnVJWtQcP3okRd5vD8EIHTts
-Closest grocery shopping id:  ChIJJ6GptgcP3okR4x2cJTYBQoE
+Total displacement without origin: 345.38513469176445
+(lat,lng): (42.706917, -73.777726)
+origin_dist: 7912.466588165269 id: e1827ee39773c5a23fba013471363c2052d84876 pid: ChIJg6W3cnYM3okRxIJOY96FKls
+(lat,lng): (42.706787, -73.777619)
+origin_dist: 7909.046220138476 id: 607ec6e0ffd71ce7e4a0e0a3177a99c7487d753a pid: ChIJg6W3cnYM3okR3N7JmYqn3V4
+(lat,lng): (42.70803, -73.778884)
+origin_dist: 7961.956897320148 id: cceb6fc9f771650e1dcce99aaad968a3bd48465b pid: ChIJW5LninYM3okRArGOZsJkMXc
+(lat,lng): (42.706917, -73.777726)
+origin_dist: 7912.466588165269 id: e1827ee39773c5a23fba013471363c2052d84876 pid: ChIJg6W3cnYM3okRxIJOY96FKls
 
-between x and y in meters:  53.10531878667384
-dist from origin for x: 220.88345931054656
-dist from origin for y: 209.63899167813256
-Closest haircut place_id:  ChIJqdMmQagP3okR-aISLqtZhMw
-Closest grocery shopping id:  ChIJFY-C_wcP3okReWLUK5gXq_o
+Total displacement without origin: 402.05787227429283
+(lat,lng): (42.860192, -73.780065)
+origin_dist: 16290.864729514147 id: e3c5d88a8d52a3d4c72db6613b79b4523cd10832 pid: ChIJl4ULGXYU3okRgN4letujDds
+(lat,lng): (42.860204, -73.780138)
+origin_dist: 16294.843690717735 id: 475ce4b37b831a07d5c113a0d5fdab1dc521fa39 pid: ChIJzxhVU3YU3okR4COSLbBk65w
+(lat,lng): (42.861962, -73.780444)
+origin_dist: 16479.141637842473 id: e871d3536abbadb78a3816981c87155cde55cd9d pid: ChIJD8SqJncU3okR3vJje_BMNGo
+(lat,lng): (42.860192, -73.780065)
+origin_dist: 16290.864729514147 id: e3c5d88a8d52a3d4c72db6613b79b4523cd10832 pid: ChIJl4ULGXYU3okRgN4letujDds
 
-between x and y in meters:  244.0822165585017
-dist from origin for x: 220.88345931054656
-dist from origin for y: 197.90142649528548
-Closest haircut place_id:  ChIJqdMmQagP3okR-aISLqtZhMw
-Closest grocery shopping id:  ChIJr_LGx6cP3okRuo3sDuDuauM
+Total displacement without origin: 403.7056028891979
+(lat,lng): (42.745981, -73.759729)
+origin_dist: 6219.9902938297455 id: 841aefa63e818f8a41f570acf7d80420903dfbb1 pid: ChIJ734xAc4N3okR1b11RJrMIFA
+(lat,lng): (42.746357, -73.758462)
+origin_dist: 6131.972467852192 id: f0225c02487a3ab7046c7d8607e3a2abd8002b4e pid: ChIJbSMw69EN3okRv7liXs5kuCI
+(lat,lng): (42.747359, -73.759436)
+origin_dist: 6240.581549901486 id: 46de5e79f26b98b8bd4e0b236a80b990e4a3a283 pid: ChIJiZWt2dEN3okR1GbpoMafFoc
+(lat,lng): (42.745981, -73.759729)
+origin_dist: 6219.9902938297455 id: 841aefa63e818f8a41f570acf7d80420903dfbb1 pid: ChIJ734xAc4N3okR1b11RJrMIFA
+
+Total displacement without origin: 404.7540133608684
+(lat,lng): (42.681447, -73.791754)
+origin_dist: 10200.091297773784 id: f64e870a16f14a07dc5677d866cf8a5076667dac pid: ChIJj5dRGqcL3okRRx34zp4g0G8
+(lat,lng): (42.680363, -73.79288)
+origin_dist: 10342.721118112453 id: 8515301bf0dbda53c9fc167139dbe14c62a371ce pid: ChIJgTXJwKcL3okRsxzmdp9mQb8
+(lat,lng): (42.681131, -73.793552)
+origin_dist: 10343.39327736486 id: 2e6ec5f254aef82f630be99af2cea1d99778c129 pid: ChIJjUNYCElz3okR8V0Zi8azgZY
+(lat,lng): (42.681447, -73.791754)
+origin_dist: 10200.091297773784 id: f64e870a16f14a07dc5677d866cf8a5076667dac pid: ChIJj5dRGqcL3okRRx34zp4g0G8
+
+Total displacement without origin: 405.13696653221695
+(lat,lng): (42.747885, -73.758468)
+origin_dist: 6182.727698092528 id: d3fa8773bff417a5b3f94e0e6a1f265d04e7574a pid: ChIJM7-czNEN3okR2AIWodKGXL8
+(lat,lng): (42.746357, -73.758462)
+origin_dist: 6131.972467852192 id: f0225c02487a3ab7046c7d8607e3a2abd8002b4e pid: ChIJbSMw69EN3okRv7liXs5kuCI
+(lat,lng): (42.747359, -73.759436)
+origin_dist: 6240.581549901486 id: 46de5e79f26b98b8bd4e0b236a80b990e4a3a283 pid: ChIJiZWt2dEN3okR1GbpoMafFoc
+(lat,lng): (42.747885, -73.758468)
+origin_dist: 6182.727698092528 id: d3fa8773bff417a5b3f94e0e6a1f265d04e7574a pid: ChIJM7-czNEN3okR2AIWodKGXL8
+
+Total displacement without origin: 405.9328161084594
+(lat,lng): (42.681447, -73.791754)
+origin_dist: 10200.091297773784 id: f64e870a16f14a07dc5677d866cf8a5076667dac pid: ChIJj5dRGqcL3okRRx34zp4g0G8
+(lat,lng): (42.680363, -73.79288)
+origin_dist: 10342.721118112453 id: 8515301bf0dbda53c9fc167139dbe14c62a371ce pid: ChIJgTXJwKcL3okRsxzmdp9mQb8
+(lat,lng): (42.681234, -73.793499)
+origin_dist: 10333.624802983986 id: 22d8732590d9f8005b93585b030ca021a7b2bee9 pid: ChIJ5fo5_qYL3okRJfdHvZMhjKM
+(lat,lng): (42.681447, -73.791754)
+origin_dist: 10200.091297773784 id: f64e870a16f14a07dc5677d866cf8a5076667dac pid: ChIJj5dRGqcL3okRRx34zp4g0G8
+
+Total displacement without origin: 417.0760816254343
+(lat,lng): (42.681447, -73.791754)
+origin_dist: 10200.091297773784 id: f64e870a16f14a07dc5677d866cf8a5076667dac pid: ChIJj5dRGqcL3okRRx34zp4g0G8
+(lat,lng): (42.680363, -73.79288)
+origin_dist: 10342.721118112453 id: 8515301bf0dbda53c9fc167139dbe14c62a371ce pid: ChIJgTXJwKcL3okRsxzmdp9mQb8
+(lat,lng): (42.680759, -73.793757)
+origin_dist: 10379.65796535142 id: 633c3784c50cc0037f642388d4f5aa3f5c65bca5 pid: ChIJnSmVvqcL3okR05E2-xylmhM
+(lat,lng): (42.681447, -73.791754)
+origin_dist: 10200.091297773784 id: f64e870a16f14a07dc5677d866cf8a5076667dac pid: ChIJj5dRGqcL3okRRx34zp4g0G8
+
+Total displacement without origin: 420.82278270537904
+(lat,lng): (42.862874, -73.780192)
+origin_dist: 16559.310377924907 id: abe435afabdadef5c6a6a0a7b9344e742a6d0669 pid: ChIJ2wOyKncU3okREAlzLHTjax4
+(lat,lng): (42.863791, -73.780775)
+origin_dist: 16671.665437158255 id: 99dc77329275ef27bcf6c73ea9138ac77abd0476 pid: ChIJ7UxWPqIU3okRL-NZXhhUejE
+(lat,lng): (42.861962, -73.780444)
+origin_dist: 16479.141637842473 id: e871d3536abbadb78a3816981c87155cde55cd9d pid: ChIJD8SqJncU3okR3vJje_BMNGo
+(lat,lng): (42.862874, -73.780192)
+origin_dist: 16559.310377924907 id: abe435afabdadef5c6a6a0a7b9344e742a6d0669 pid: ChIJ2wOyKncU3okREAlzLHTjax4
+
+Total displacement without origin: 472.81013424481233
+(lat,lng): (42.642836, -73.608323)
+origin_dist: 11680.70183381342 id: 85d0f36da9afef762710de0a551dd3c03cfa59be pid: ChIJUxY_M1UG3okRPzS_2Q0L5b0
+(lat,lng): (42.643415, -73.608459)
+origin_dist: 11620.856572206156 id: 32fb6f5fd15f74a2a89af233888106cb051b7ec7 pid: ChIJTwNrOlUG3okRBz7wMGyFins
+(lat,lng): (42.641778, -73.610047)
+origin_dist: 11702.681265363604 id: 06205345f5a36e79d49d6cb0db67d6e29d9a3587 pid: ChIJp1GUIqsH3okRQ2iEBEkDNIw
+(lat,lng): (42.642836, -73.608323)
+origin_dist: 11680.70183381342 id: 85d0f36da9afef762710de0a551dd3c03cfa59be pid: ChIJUxY_M1UG3okRPzS_2Q0L5b0
+
+Total displacement without origin: 518.3056908421665
+(lat,lng): (42.740788, -73.76236)
+origin_dist: 6299.7929468951015 id: f02e842620433cc815a8dbbdf38113b4bcdae2c9 pid: ChIJ6_69JzMM3okRQD3imcesCH4
+(lat,lng): (42.738808, -73.762855)
+origin_dist: 6304.533405846114 id: 65c19c122b52719354290cada0d3c057b2805e70 pid: ChIJh6D4qzMM3okR3DTGplVIYtc
+(lat,lng): (42.739117, -73.761693)
+origin_dist: 6215.442212894759 id: 5be6cf77e3f657de2043904d194448c9d7254ca6 pid: ChIJP6tf9zIM3okRynj7MH4Iz7c
+(lat,lng): (42.740788, -73.76236)
+origin_dist: 6299.7929468951015 id: f02e842620433cc815a8dbbdf38113b4bcdae2c9 pid: ChIJ6_69JzMM3okRQD3imcesCH4
+
+Total displacement without origin: 522.7985788065995
+(lat,lng): (42.707219, -73.775402)
+origin_dist: 7721.8658081348485 id: 5352a3e3d3a4b5886806b6777942759c15411962 pid: ChIJJynSyXUM3okRAsdw7mhoJzg
+(lat,lng): (42.706787, -73.777619)
+origin_dist: 7909.046220138476 id: 607ec6e0ffd71ce7e4a0e0a3177a99c7487d753a pid: ChIJg6W3cnYM3okR3N7JmYqn3V4
+(lat,lng): (42.70576, -73.777083)
+origin_dist: 7906.971944509743 id: d447785236db0cb6af7261d21ff2f5a7534d0808 pid: ChIJhRM1_HUM3okRAaDeS5qiDYE
+(lat,lng): (42.707219, -73.775402)
+origin_dist: 7721.8658081348485 id: 5352a3e3d3a4b5886806b6777942759c15411962 pid: ChIJJynSyXUM3okRAsdw7mhoJzg
+
+Total displacement without origin: 531.684427889121
+(lat,lng): (42.73718, -73.763568)
+origin_dist: 6339.262934767773 id: e41c4dc5dc935191b7d92d0957c261bd4f7509de pid: ChIJSUIm2TMM3okRAOGQNFd4dbs
+(lat,lng): (42.738129, -73.762947)
+origin_dist: 6301.673155199474 id: 024fd86b3f82a97a005138c5cb35209d37a8bdc8 pid: ChIJlxCTtjMM3okRTFKQINWjj_U
+(lat,lng): (42.739117, -73.761693)
+origin_dist: 6215.442212894759 id: 5be6cf77e3f657de2043904d194448c9d7254ca6 pid: ChIJP6tf9zIM3okRynj7MH4Iz7c
+(lat,lng): (42.73718, -73.763568)
+origin_dist: 6339.262934767773 id: e41c4dc5dc935191b7d92d0957c261bd4f7509de pid: ChIJSUIm2TMM3okRAOGQNFd4dbs
+
+Total displacement without origin: 534.9190781606017
+(lat,lng): (42.737174, -73.763593)
+origin_dist: 6341.221321417739 id: f92934ff85d8f5f7fc1d252598d36cc1a12dc992 pid: ChIJqSKu2TMM3okRLBDKeeEhRwA
+(lat,lng): (42.738129, -73.762947)
+origin_dist: 6301.673155199474 id: 024fd86b3f82a97a005138c5cb35209d37a8bdc8 pid: ChIJlxCTtjMM3okRTFKQINWjj_U
+(lat,lng): (42.739117, -73.761693)
+origin_dist: 6215.442212894759 id: 5be6cf77e3f657de2043904d194448c9d7254ca6 pid: ChIJP6tf9zIM3okRynj7MH4Iz7c
+(lat,lng): (42.737174, -73.763593)
+origin_dist: 6341.221321417739 id: f92934ff85d8f5f7fc1d252598d36cc1a12dc992 pid: ChIJqSKu2TMM3okRLBDKeeEhRwA
+
+Total displacement without origin: 549.571088182996
+(lat,lng): (42.681447, -73.791754)
+origin_dist: 10200.091297773784 id: f64e870a16f14a07dc5677d866cf8a5076667dac pid: ChIJj5dRGqcL3okRRx34zp4g0G8
+(lat,lng): (42.681724, -73.790214)
+origin_dist: 10077.161511216296 id: 1e2b2943f4eee4587eb88268eec3292eac669007 pid: ChIJj5dRGqcL3okRtDRkmi5joSU
+(lat,lng): (42.681234, -73.793499)
+origin_dist: 10333.624802983986 id: 22d8732590d9f8005b93585b030ca021a7b2bee9 pid: ChIJ5fo5_qYL3okRJfdHvZMhjKM
+(lat,lng): (42.681447, -73.791754)
+origin_dist: 10200.091297773784 id: f64e870a16f14a07dc5677d866cf8a5076667dac pid: ChIJj5dRGqcL3okRRx34zp4g0G8
+
+Total displacement without origin: 555.5326783575886
+(lat,lng): (42.73718, -73.763568)
+origin_dist: 6339.262934767773 id: e41c4dc5dc935191b7d92d0957c261bd4f7509de pid: ChIJSUIm2TMM3okRAOGQNFd4dbs
+(lat,lng): (42.738808, -73.762855)
+origin_dist: 6304.533405846114 id: 65c19c122b52719354290cada0d3c057b2805e70 pid: ChIJh6D4qzMM3okR3DTGplVIYtc
+(lat,lng): (42.739117, -73.761693)
+origin_dist: 6215.442212894759 id: 5be6cf77e3f657de2043904d194448c9d7254ca6 pid: ChIJP6tf9zIM3okRynj7MH4Iz7c
+(lat,lng): (42.73718, -73.763568)
+origin_dist: 6339.262934767773 id: e41c4dc5dc935191b7d92d0957c261bd4f7509de pid: ChIJSUIm2TMM3okRAOGQNFd4dbs
+
+Total displacement without origin: 558.538558208738
+(lat,lng): (42.737174, -73.763593)
+origin_dist: 6341.221321417739 id: f92934ff85d8f5f7fc1d252598d36cc1a12dc992 pid: ChIJqSKu2TMM3okRLBDKeeEhRwA
+(lat,lng): (42.738808, -73.762855)
+origin_dist: 6304.533405846114 id: 65c19c122b52719354290cada0d3c057b2805e70 pid: ChIJh6D4qzMM3okR3DTGplVIYtc
+(lat,lng): (42.739117, -73.761693)
+origin_dist: 6215.442212894759 id: 5be6cf77e3f657de2043904d194448c9d7254ca6 pid: ChIJP6tf9zIM3okRynj7MH4Iz7c
+(lat,lng): (42.737174, -73.763593)
+origin_dist: 6341.221321417739 id: f92934ff85d8f5f7fc1d252598d36cc1a12dc992 pid: ChIJqSKu2TMM3okRLBDKeeEhRwA
+
+Total displacement without origin: 559.5975773488041
+(lat,lng): (42.681447, -73.791754)
+origin_dist: 10200.091297773784 id: f64e870a16f14a07dc5677d866cf8a5076667dac pid: ChIJj5dRGqcL3okRRx34zp4g0G8
+(lat,lng): (42.679611, -73.792236)
+origin_dist: 10343.98682084768 id: 08ab5ee578ca4a5be8c250b2ace4a03ae6cd4eae pid: ChIJ5TyRzacL3okRqSktnJ2R0uM
+(lat,lng): (42.681131, -73.793552)
+origin_dist: 10343.39327736486 id: 2e6ec5f254aef82f630be99af2cea1d99778c129 pid: ChIJjUNYCElz3okR8V0Zi8azgZY
+(lat,lng): (42.681447, -73.791754)
+origin_dist: 10200.091297773784 id: f64e870a16f14a07dc5677d866cf8a5076667dac pid: ChIJj5dRGqcL3okRRx34zp4g0G8
+
+Total displacement without origin: 560.6102905424996
+(lat,lng): (42.681447, -73.791754)
+origin_dist: 10200.091297773784 id: f64e870a16f14a07dc5677d866cf8a5076667dac pid: ChIJj5dRGqcL3okRRx34zp4g0G8
+(lat,lng): (42.679611, -73.792236)
+origin_dist: 10343.98682084768 id: 08ab5ee578ca4a5be8c250b2ace4a03ae6cd4eae pid: ChIJ5TyRzacL3okRqSktnJ2R0uM
+(lat,lng): (42.681234, -73.793499)
+origin_dist: 10333.624802983986 id: 22d8732590d9f8005b93585b030ca021a7b2bee9 pid: ChIJ5fo5_qYL3okRJfdHvZMhjKM
+(lat,lng): (42.681447, -73.791754)
+origin_dist: 10200.091297773784 id: f64e870a16f14a07dc5677d866cf8a5076667dac pid: ChIJj5dRGqcL3okRRx34zp4g0G8
+
+Total displacement without origin: 562.8102036236284
+(lat,lng): (42.681447, -73.791754)
+origin_dist: 10200.091297773784 id: f64e870a16f14a07dc5677d866cf8a5076667dac pid: ChIJj5dRGqcL3okRRx34zp4g0G8
+(lat,lng): (42.681724, -73.790214)
+origin_dist: 10077.161511216296 id: 1e2b2943f4eee4587eb88268eec3292eac669007 pid: ChIJj5dRGqcL3okRtDRkmi5joSU
+(lat,lng): (42.681131, -73.793552)
+origin_dist: 10343.39327736486 id: 2e6ec5f254aef82f630be99af2cea1d99778c129 pid: ChIJjUNYCElz3okR8V0Zi8azgZY
+(lat,lng): (42.681447, -73.791754)
+origin_dist: 10200.091297773784 id: f64e870a16f14a07dc5677d866cf8a5076667dac pid: ChIJj5dRGqcL3okRRx34zp4g0G8
+
+Total displacement without origin: 567.1712085634147
+(lat,lng): (42.681447, -73.791754)
+origin_dist: 10200.091297773784 id: f64e870a16f14a07dc5677d866cf8a5076667dac pid: ChIJj5dRGqcL3okRRx34zp4g0G8
+(lat,lng): (42.679611, -73.792236)
+origin_dist: 10343.98682084768 id: 08ab5ee578ca4a5be8c250b2ace4a03ae6cd4eae pid: ChIJ5TyRzacL3okRqSktnJ2R0uM
+(lat,lng): (42.680759, -73.793757)
+origin_dist: 10379.65796535142 id: 633c3784c50cc0037f642388d4f5aa3f5c65bca5 pid: ChIJnSmVvqcL3okR05E2-xylmhM
+(lat,lng): (42.681447, -73.791754)
+origin_dist: 10200.091297773784 id: f64e870a16f14a07dc5677d866cf8a5076667dac pid: ChIJj5dRGqcL3okRRx34zp4g0G8
+
+Total displacement without origin: 573.7877252886931
+(lat,lng): (42.713416, -73.813747)
+origin_dist: 10584.37592557452 id: 719b786078a242cdfb582c878582b4cf1cf671ca pid: ChIJD2esj54M3okRV0j0JqAxue8
+(lat,lng): (42.714306, -73.812085)
+origin_dist: 10432.766471255296 id: 36246ea4bb738a83c733a984df1179759960b17b pid: ChIJ0zgYpJ4M3okRKVGOYoBWg38
+(lat,lng): (42.715151, -73.811174)
+origin_dist: 10343.16461087365 id: 3aecf81b50eb73262833d542ceeefb5809e78579 pid: ChIJb_Gn85sM3okRzjTG-dEq9UA
+(lat,lng): (42.713416, -73.813747)
+origin_dist: 10584.37592557452 id: 719b786078a242cdfb582c878582b4cf1cf671ca pid: ChIJD2esj54M3okRV0j0JqAxue8
+
+Total displacement without origin: 593.0377087376214
+(lat,lng): (42.861493, -73.765613)
+origin_dist: 15902.821168841307 id: cf61649fe1d9a0a2f0cce263c3d00152a942c1fb pid: ChIJm6ixBQwU3okRFkRBeuVmHHc
+(lat,lng): (42.860706, -73.765299)
+origin_dist: 15812.51694364731 id: 7a34cd3178fe38425e12bdfde8897a76665d0b4b pid: ChIJl9gxVQkU3okRwKq_wABhmho
+(lat,lng): (42.858882, -73.764872)
+origin_dist: 15613.32496340404 id: 9fd5ddc6b25240fe910e5e7cf5bf19a0322183af pid: ChIJ--FIewkU3okRBG83ZX-C6hk
+(lat,lng): (42.861493, -73.765613)
+origin_dist: 15902.821168841307 id: cf61649fe1d9a0a2f0cce263c3d00152a942c1fb pid: ChIJm6ixBQwU3okRFkRBeuVmHHc
+
+Total displacement without origin: 594.9644666079971
+(lat,lng): (42.859295, -73.78019)
+origin_dist: 16207.778024786297 id: eefdc4a71e4cf60ec41d234e8f2ffdc03892f6c7 pid: ChIJ8cPKp3cU3okRubtgAnIvL48
+(lat,lng): (42.860204, -73.780138)
+origin_dist: 16294.843690717735 id: 475ce4b37b831a07d5c113a0d5fdab1dc521fa39 pid: ChIJzxhVU3YU3okR4COSLbBk65w
+(lat,lng): (42.861962, -73.780444)
+origin_dist: 16479.141637842473 id: e871d3536abbadb78a3816981c87155cde55cd9d pid: ChIJD8SqJncU3okR3vJje_BMNGo
+(lat,lng): (42.859295, -73.78019)
+origin_dist: 16207.778024786297 id: eefdc4a71e4cf60ec41d234e8f2ffdc03892f6c7 pid: ChIJ8cPKp3cU3okRubtgAnIvL48
+
+Total displacement without origin: 596.9201375244942
+(lat,lng): (42.862874, -73.780192)
+origin_dist: 16559.310377924907 id: abe435afabdadef5c6a6a0a7b9344e742a6d0669 pid: ChIJ2wOyKncU3okREAlzLHTjax4
+(lat,lng): (42.860204, -73.780138)
+origin_dist: 16294.843690717735 id: 475ce4b37b831a07d5c113a0d5fdab1dc521fa39 pid: ChIJzxhVU3YU3okR4COSLbBk65w
+(lat,lng): (42.861962, -73.780444)
+origin_dist: 16479.141637842473 id: e871d3536abbadb78a3816981c87155cde55cd9d pid: ChIJD8SqJncU3okR3vJje_BMNGo
+(lat,lng): (42.862874, -73.780192)
+origin_dist: 16559.310377924907 id: abe435afabdadef5c6a6a0a7b9344e742a6d0669 pid: ChIJ2wOyKncU3okREAlzLHTjax4
+
+Total displacement without origin: 598.2946676509417
+(lat,lng): (42.861493, -73.765613)
+origin_dist: 15902.821168841307 id: cf61649fe1d9a0a2f0cce263c3d00152a942c1fb pid: ChIJm6ixBQwU3okRFkRBeuVmHHc
+(lat,lng): (42.860706, -73.765299)
+origin_dist: 15812.51694364731 id: 7a34cd3178fe38425e12bdfde8897a76665d0b4b pid: ChIJl9gxVQkU3okRwKq_wABhmho
+(lat,lng): (42.858856, -73.764886)
+origin_dist: 15611.160394771485 id: 576f2639ae1ff66b11831e9e13acd1f5a620c342 pid: ChIJ--FIewkU3okREFMnNL0wiuY
+(lat,lng): (42.861493, -73.765613)
+origin_dist: 15902.821168841307 id: cf61649fe1d9a0a2f0cce263c3d00152a942c1fb pid: ChIJm6ixBQwU3okRFkRBeuVmHHc
+
+Total displacement without origin: 610.0060068185512
+(lat,lng): (42.713416, -73.813747)
+origin_dist: 10584.37592557452 id: 719b786078a242cdfb582c878582b4cf1cf671ca pid: ChIJD2esj54M3okRV0j0JqAxue8
+(lat,lng): (42.714306, -73.812085)
+origin_dist: 10432.766471255296 id: 36246ea4bb738a83c733a984df1179759960b17b pid: ChIJ0zgYpJ4M3okRKVGOYoBWg38
+(lat,lng): (42.715666, -73.811946)
+origin_dist: 10396.144159860442 id: 5bcb2b891ca64fae729379bf1cf2b2e567e90a69 pid: ChIJLb67-5sM3okRcbUpZy-tvzc
+(lat,lng): (42.713416, -73.813747)
+origin_dist: 10584.37592557452 id: 719b786078a242cdfb582c878582b4cf1cf671ca pid: ChIJD2esj54M3okRV0j0JqAxue8
+
+Total displacement without origin: 620.5465456294833
+(lat,lng): (42.681447, -73.791754)
+origin_dist: 10200.091297773784 id: f64e870a16f14a07dc5677d866cf8a5076667dac pid: ChIJj5dRGqcL3okRRx34zp4g0G8
+(lat,lng): (42.681724, -73.790214)
+origin_dist: 10077.161511216296 id: 1e2b2943f4eee4587eb88268eec3292eac669007 pid: ChIJj5dRGqcL3okRtDRkmi5joSU
+(lat,lng): (42.680759, -73.793757)
+origin_dist: 10379.65796535142 id: 633c3784c50cc0037f642388d4f5aa3f5c65bca5 pid: ChIJnSmVvqcL3okR05E2-xylmhM
+(lat,lng): (42.681447, -73.791754)
+origin_dist: 10200.091297773784 id: f64e870a16f14a07dc5677d866cf8a5076667dac pid: ChIJj5dRGqcL3okRRx34zp4g0G8
+
+Total displacement without origin: 643.0633890028685
+(lat,lng): (42.740788, -73.76236)
+origin_dist: 6299.7929468951015 id: f02e842620433cc815a8dbbdf38113b4bcdae2c9 pid: ChIJ6_69JzMM3okRQD3imcesCH4
+(lat,lng): (42.738129, -73.762947)
+origin_dist: 6301.673155199474 id: 024fd86b3f82a97a005138c5cb35209d37a8bdc8 pid: ChIJlxCTtjMM3okRTFKQINWjj_U
+(lat,lng): (42.739117, -73.761693)
+origin_dist: 6215.442212894759 id: 5be6cf77e3f657de2043904d194448c9d7254ca6 pid: ChIJP6tf9zIM3okRynj7MH4Iz7c
+(lat,lng): (42.740788, -73.76236)
+origin_dist: 6299.7929468951015 id: f02e842620433cc815a8dbbdf38113b4bcdae2c9 pid: ChIJ6_69JzMM3okRQD3imcesCH4
+
+Total displacement without origin: 659.6692504594529
+(lat,lng): (42.707219, -73.775402)
+origin_dist: 7721.8658081348485 id: 5352a3e3d3a4b5886806b6777942759c15411962 pid: ChIJJynSyXUM3okRAsdw7mhoJzg
+(lat,lng): (42.706787, -73.777619)
+origin_dist: 7909.046220138476 id: 607ec6e0ffd71ce7e4a0e0a3177a99c7487d753a pid: ChIJg6W3cnYM3okR3N7JmYqn3V4
+(lat,lng): (42.70803, -73.778884)
+origin_dist: 7961.956897320148 id: cceb6fc9f771650e1dcce99aaad968a3bd48465b pid: ChIJW5LninYM3okRArGOZsJkMXc
+(lat,lng): (42.707219, -73.775402)
+origin_dist: 7721.8658081348485 id: 5352a3e3d3a4b5886806b6777942759c15411962 pid: ChIJJynSyXUM3okRAsdw7mhoJzg
+
+Total displacement without origin: 687.2113098943985
+(lat,lng): (42.714326, -73.812327)
+origin_dist: 10451.897022550831 id: f44283bad0d41e6548728280ac917025ca57fdd9 pid: ChIJX4T8pJ4M3okR2Q-Wp4CyA2A
+(lat,lng): (42.7174, -73.812144)
+origin_dist: 10382.899866642827 id: daffdebe34eeeaeef5eb3a57cbe79d8d70073a50 pid: ChIJNdoG1JsM3okRKj8QaCHitww
+(lat,lng): (42.715666, -73.811946)
+origin_dist: 10396.144159860442 id: 5bcb2b891ca64fae729379bf1cf2b2e567e90a69 pid: ChIJLb67-5sM3okRcbUpZy-tvzc
+(lat,lng): (42.714326, -73.812327)
+origin_dist: 10451.897022550831 id: f44283bad0d41e6548728280ac917025ca57fdd9 pid: ChIJX4T8pJ4M3okR2Q-Wp4CyA2A
+
+Total displacement without origin: 688.0792623889868
+(lat,lng): (42.86227, -73.783164)
+origin_dist: 16614.000455188794 id: bada8939429aca85e8f689dabece658e83761485 pid: ChIJj5oOb3cU3okR57vmAFvkl8E
+(lat,lng): (42.863791, -73.780775)
+origin_dist: 16671.665437158255 id: 99dc77329275ef27bcf6c73ea9138ac77abd0476 pid: ChIJ7UxWPqIU3okRL-NZXhhUejE
+(lat,lng): (42.861962, -73.780444)
+origin_dist: 16479.141637842473 id: e871d3536abbadb78a3816981c87155cde55cd9d pid: ChIJD8SqJncU3okR3vJje_BMNGo
+(lat,lng): (42.86227, -73.783164)
+origin_dist: 16614.000455188794 id: bada8939429aca85e8f689dabece658e83761485 pid: ChIJj5oOb3cU3okR57vmAFvkl8E
+
+Total displacement without origin: 689.3522758503696
+(lat,lng): (42.707219, -73.775402)
+origin_dist: 7721.8658081348485 id: 5352a3e3d3a4b5886806b6777942759c15411962 pid: ChIJJynSyXUM3okRAsdw7mhoJzg
+(lat,lng): (42.708508, -73.775446)
+origin_dist: 7678.067322240242 id: aea27b135b1c14149c7020a9f0290abedc97216f pid: ChIJeQlIenYM3okREqwVrO-QL2Y
+(lat,lng): (42.70576, -73.777083)
+origin_dist: 7906.971944509743 id: d447785236db0cb6af7261d21ff2f5a7534d0808 pid: ChIJhRM1_HUM3okRAaDeS5qiDYE
+(lat,lng): (42.707219, -73.775402)
+origin_dist: 7721.8658081348485 id: 5352a3e3d3a4b5886806b6777942759c15411962 pid: ChIJJynSyXUM3okRAsdw7mhoJzg
+
+Total displacement without origin: 699.6200121787512
+(lat,lng): (42.706917, -73.777726)
+origin_dist: 7912.466588165269 id: e1827ee39773c5a23fba013471363c2052d84876 pid: ChIJg6W3cnYM3okRxIJOY96FKls
+(lat,lng): (42.708508, -73.775446)
+origin_dist: 7678.067322240242 id: aea27b135b1c14149c7020a9f0290abedc97216f pid: ChIJeQlIenYM3okREqwVrO-QL2Y
+(lat,lng): (42.70803, -73.778884)
+origin_dist: 7961.956897320148 id: cceb6fc9f771650e1dcce99aaad968a3bd48465b pid: ChIJW5LninYM3okRArGOZsJkMXc
+(lat,lng): (42.706917, -73.777726)
+origin_dist: 7912.466588165269 id: e1827ee39773c5a23fba013471363c2052d84876 pid: ChIJg6W3cnYM3okRxIJOY96FKls
+
+Total displacement without origin: 707.2212456332746
+(lat,lng): (42.724149, -73.841105)
+origin_dist: 12669.733015399454 id: 1856439f373dc49bddc1759180137876a6bdcc20 pid: ChIJd5pEWK0M3okRUVBTYErqUDk
+(lat,lng): (42.724838, -73.843464)
+origin_dist: 12858.464380261103 id: b1af7ddaf6e149d95605a16dfadb8ccbdfb42add pid: ChIJU6x8nFJz3okRLNmSjLUMmdA
+(lat,lng): (42.72572, -73.844824)
+origin_dist: 12965.084418035935 id: e797c5b6c11defee8f93d74d949b7f7d332d049e pid: ChIJsyz3dU1z3okRBn4rE5qwjAQ
+(lat,lng): (42.724149, -73.841105)
+origin_dist: 12669.733015399454 id: 1856439f373dc49bddc1759180137876a6bdcc20 pid: ChIJd5pEWK0M3okRUVBTYErqUDk
+
+Total displacement without origin: 720.7102677337601
+(lat,lng): (42.623557, -73.830316)
+origin_dist: 16740.644879748936 id: cce3a27dd759f73f0b1e7ed99cf8a0f96cec2dda pid: ChIJN_qaHQ7g3YkR5TJ006R1rJQ
+(lat,lng): (42.622063, -73.83413)
+origin_dist: 17078.929921509298 id: 4430d6bfb69dc93ca5efdbae13664ac87e061435 pid: ChIJcwD-OQzg3YkRpQcNeKuwgTc
+(lat,lng): (42.623426, -73.831804)
+origin_dist: 16836.958483262726 id: 7664e2450fdbbcfa7c88caff4fefcfdaf643c869 pid: ChIJE0eebQ7g3YkR_r-GbXrwKgk
+(lat,lng): (42.623557, -73.830316)
+origin_dist: 16740.644879748936 id: cce3a27dd759f73f0b1e7ed99cf8a0f96cec2dda pid: ChIJN_qaHQ7g3YkR5TJ006R1rJQ
+
+Total displacement without origin: 729.0147572477
+(lat,lng): (42.707219, -73.775402)
+origin_dist: 7721.8658081348485 id: 5352a3e3d3a4b5886806b6777942759c15411962 pid: ChIJJynSyXUM3okRAsdw7mhoJzg
+(lat,lng): (42.708508, -73.775446)
+origin_dist: 7678.067322240242 id: aea27b135b1c14149c7020a9f0290abedc97216f pid: ChIJeQlIenYM3okREqwVrO-QL2Y
+(lat,lng): (42.70803, -73.778884)
+origin_dist: 7961.956897320148 id: cceb6fc9f771650e1dcce99aaad968a3bd48465b pid: ChIJW5LninYM3okRArGOZsJkMXc
+(lat,lng): (42.707219, -73.775402)
+origin_dist: 7721.8658081348485 id: 5352a3e3d3a4b5886806b6777942759c15411962 pid: ChIJJynSyXUM3okRAsdw7mhoJzg
+
+Total displacement without origin: 729.4876121862194
+(lat,lng): (42.706917, -73.777726)
+origin_dist: 7912.466588165269 id: e1827ee39773c5a23fba013471363c2052d84876 pid: ChIJg6W3cnYM3okRxIJOY96FKls
+(lat,lng): (42.708508, -73.775446)
+origin_dist: 7678.067322240242 id: aea27b135b1c14149c7020a9f0290abedc97216f pid: ChIJeQlIenYM3okREqwVrO-QL2Y
+(lat,lng): (42.70576, -73.777083)
+origin_dist: 7906.971944509743 id: d447785236db0cb6af7261d21ff2f5a7534d0808 pid: ChIJhRM1_HUM3okRAaDeS5qiDYE
+(lat,lng): (42.706917, -73.777726)
+origin_dist: 7912.466588165269 id: e1827ee39773c5a23fba013471363c2052d84876 pid: ChIJg6W3cnYM3okRxIJOY96FKls
+
+Total displacement without origin: 735.1621989135643
+(lat,lng): (42.834486, -73.738132)
+origin_dist: 12276.904461366574 id: aa69f83fb00e23cf91ca9bc5cf7b9577fc456f2c pid: ChIJp2bubFgR3okRQTQDFhhPbc8
+(lat,lng): (42.834791, -73.738581)
+origin_dist: 12321.352415116302 id: 4a61125db39d82268df9ba547a1f9d60b559504b pid: ChIJj5xnflwR3okR8OvNA-EDeBw
+(lat,lng): (42.837581, -73.739602)
+origin_dist: 12641.090834215738 id: deb92c1b295cebbe4cc8b8dd34d064738b3006cf pid: ChIJxS7mdFwR3okRDlawjdBSpB0
+(lat,lng): (42.834486, -73.738132)
+origin_dist: 12276.904461366574 id: aa69f83fb00e23cf91ca9bc5cf7b9577fc456f2c pid: ChIJp2bubFgR3okRQTQDFhhPbc8
+
+Total displacement without origin: 735.582816897438
+(lat,lng): (42.714326, -73.812327)
+origin_dist: 10451.897022550831 id: f44283bad0d41e6548728280ac917025ca57fdd9 pid: ChIJX4T8pJ4M3okR2Q-Wp4CyA2A
+(lat,lng): (42.7174, -73.812144)
+origin_dist: 10382.899866642827 id: daffdebe34eeeaeef5eb3a57cbe79d8d70073a50 pid: ChIJNdoG1JsM3okRKj8QaCHitww
+(lat,lng): (42.715151, -73.811174)
+origin_dist: 10343.16461087365 id: 3aecf81b50eb73262833d542ceeefb5809e78579 pid: ChIJb_Gn85sM3okRzjTG-dEq9UA
+(lat,lng): (42.714326, -73.812327)
+origin_dist: 10451.897022550831 id: f44283bad0d41e6548728280ac917025ca57fdd9 pid: ChIJX4T8pJ4M3okR2Q-Wp4CyA2A
+
+Total displacement without origin: 739.0781815242551
+(lat,lng): (42.745981, -73.759729)
+origin_dist: 6219.9902938297455 id: 841aefa63e818f8a41f570acf7d80420903dfbb1 pid: ChIJ734xAc4N3okR1b11RJrMIFA
+(lat,lng): (42.746357, -73.758462)
+origin_dist: 6131.972467852192 id: f0225c02487a3ab7046c7d8607e3a2abd8002b4e pid: ChIJbSMw69EN3okRv7liXs5kuCI
+(lat,lng): (42.743945, -73.761429)
+origin_dist: 6297.368427680331 id: f901b3e7a59badb6d5718e4c7c6529a295c0f02a pid: ChIJy-uuCM0N3okRtWDK3SvmbvY
+(lat,lng): (42.745981, -73.759729)
+origin_dist: 6219.9902938297455 id: 841aefa63e818f8a41f570acf7d80420903dfbb1 pid: ChIJ734xAc4N3okR1b11RJrMIFA
+
+Total displacement without origin: 743.7815353732808
+(lat,lng): (42.744655, -73.641013)
+origin_dist: 4047.700598207188 id: f0800bf8676ca3dd5e6a1a578ca1e36aceacdce9 pid: ChIJTTrDKV0F3okRf8ADQJ4i7oE
+(lat,lng): (42.745784, -73.638742)
+origin_dist: 4267.748728164308 id: 76123a875744645acf1b3c93748903bd2bcaa8e5 pid: ChIJ55INakMF3okRwIYWbgiifaE
+(lat,lng): (42.747003, -73.63787)
+origin_dist: 4387.672119132145 id: 3c3cb263673417fe24972229b44b12328d58bf79 pid: ChIJEfMXaUMF3okR9nVb3JT84ig
+(lat,lng): (42.744655, -73.641013)
+origin_dist: 4047.700598207188 id: f0800bf8676ca3dd5e6a1a578ca1e36aceacdce9 pid: ChIJTTrDKV0F3okRf8ADQJ4i7oE
+
+Total displacement without origin: 749.0448482214624
+(lat,lng): (42.748987, -73.761321)
+origin_dist: 6442.847767779617 id: ffd86c3352caf09276e9972e342853b76968df87 pid: ChIJybZet88N3okRYeweOya9AGg
+(lat,lng): (42.746357, -73.758462)
+origin_dist: 6131.972467852192 id: f0225c02487a3ab7046c7d8607e3a2abd8002b4e pid: ChIJbSMw69EN3okRv7liXs5kuCI
+(lat,lng): (42.747359, -73.759436)
+origin_dist: 6240.581549901486 id: 46de5e79f26b98b8bd4e0b236a80b990e4a3a283 pid: ChIJiZWt2dEN3okR1GbpoMafFoc
+(lat,lng): (42.748987, -73.761321)
+origin_dist: 6442.847767779617 id: ffd86c3352caf09276e9972e342853b76968df87 pid: ChIJybZet88N3okRYeweOya9AGg
+
+Total displacement without origin: 759.1852355922383
+(lat,lng): (42.86227, -73.783164)
+origin_dist: 16614.000455188794 id: bada8939429aca85e8f689dabece658e83761485 pid: ChIJj5oOb3cU3okR57vmAFvkl8E
+(lat,lng): (42.860204, -73.780138)
+origin_dist: 16294.843690717735 id: 475ce4b37b831a07d5c113a0d5fdab1dc521fa39 pid: ChIJzxhVU3YU3okR4COSLbBk65w
+(lat,lng): (42.861962, -73.780444)
+origin_dist: 16479.141637842473 id: e871d3536abbadb78a3816981c87155cde55cd9d pid: ChIJD8SqJncU3okR3vJje_BMNGo
+(lat,lng): (42.86227, -73.783164)
+origin_dist: 16614.000455188794 id: bada8939429aca85e8f689dabece658e83761485 pid: ChIJj5oOb3cU3okR57vmAFvkl8E
+
+Total displacement without origin: 760.9654201506854
+(lat,lng): (42.86623, -73.781047)
+origin_dist: 16922.525595359668 id: 7e7a4d16cdce53361ef2a0489ade04a818a9e3dd pid: ChIJw2rMRXAU3okRi24e9IqE030
+(lat,lng): (42.866535, -73.781472)
+origin_dist: 16968.537647416117 id: 7bdfb323d27140ea0d7427b4043ed5f4f4cd91b3 pid: ChIJw2rMRXAU3okRkuWEM2R3jVo
+(lat,lng): (42.866172, -73.776914)
+origin_dist: 16765.170408971124 id: 02a07e2d3134f8ee8e29c615132961290ccd3a86 pid: ChIJ3UKIi3EU3okR8v1m3vW12lg
+(lat,lng): (42.86623, -73.781047)
+origin_dist: 16922.525595359668 id: 7e7a4d16cdce53361ef2a0489ade04a818a9e3dd pid: ChIJw2rMRXAU3okRi24e9IqE030
+
+Total displacement without origin: 762.602394284428
+(lat,lng): (42.714326, -73.812327)
+origin_dist: 10451.897022550831 id: f44283bad0d41e6548728280ac917025ca57fdd9 pid: ChIJX4T8pJ4M3okR2Q-Wp4CyA2A
+(lat,lng): (42.717712, -73.812608)
+origin_dist: 10415.644624510684 id: 8e7e06d692f96865f943a5bfb63135c04bc7a4bf pid: ChIJ15lO4ZoM3okRZTTXVA0dJa8
+(lat,lng): (42.715666, -73.811946)
+origin_dist: 10396.144159860442 id: 5bcb2b891ca64fae729379bf1cf2b2e567e90a69 pid: ChIJLb67-5sM3okRcbUpZy-tvzc
+(lat,lng): (42.714326, -73.812327)
+origin_dist: 10451.897022550831 id: f44283bad0d41e6548728280ac917025ca57fdd9 pid: ChIJX4T8pJ4M3okR2Q-Wp4CyA2A
 

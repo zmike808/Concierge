@@ -1,4 +1,4 @@
-#include "include/projcl.h"
+#include "include/projcl/projcl.h"
 
 int main() {
   cl_int error = CL_SUCCESS;
@@ -6,7 +6,7 @@ int main() {
   PLContext *ctx = pl_context_init(CL_DEVICE_TYPE_CPU, &error);
 
   PLCode *code = pl_compile_code(ctx, "./kernel", 
-          PL_MODULE_DATUM | PL_MODULE_GEODESIC | PL_MODULE_PROJECTION);
+          PL_MODULE_DATUM | PL_MODULE_GEODESIC | PL_MODULE_PROJECTION, &error);
 
   error = pl_load_code(ctx, code);
 

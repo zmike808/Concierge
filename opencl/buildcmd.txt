@@ -1,0 +1,5 @@
+gcc -shared -g -fPIC -I"C:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\v6.5\include" -L"C:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\v6.5\lib\x64" -IC:\ProjCL\include\ -Wl,-rpath,"C:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\v6.5\lib\x64" -Wl,-soname,libprojcl.dll C:/ProjCL/src/*.c -o C:\Concierge\opencl\libprojcl.dll -lm -lOpenCL 
+
+&& 
+
+gcc testing.c -L"C:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\v6.5\lib\x64" -I"C:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\v6.5\include" -L. -lm -lOpenCL -lprojcl

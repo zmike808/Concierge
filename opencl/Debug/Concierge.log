@@ -1,0 +1,614 @@
+﻿Build started 11/10/2014 3:41:36 AM.
+     1>Project "C:\Concierge\opencl\Concierge.vcxproj" on node 2 (Build target(s)).
+     1>ClCompile:
+         C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\bin\CL.exe /c /IC:\ProjCL\include\projcl /I"C:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\v6.5\include" /Zi /nologo /W3 /WX- /Od /Oy- /D WIN32 /D _DEBUG /D _CONSOLE /Gm /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Fo"Debug\\" /Fd"Debug\vc120.pdb" /Gd /TC /analyze- /errorReport:prompt testing.c
+         testing.c
+     1>testing.c(4): warning C4013: 'printf' undefined; assuming extern returning int
+     1>testing.c(16): warning C4013: 'malloc' undefined; assuming extern returning int
+     1>testing.c(16): warning C4047: 'initializing' : 'float *' differs in levels of indirection from 'int'
+     1>testing.c(17): warning C4305: '=' : truncation from 'double' to 'float'
+     1>testing.c(18): warning C4305: '=' : truncation from 'double' to 'float'
+     1>testing.c(21): warning C4047: 'initializing' : 'float *' differs in levels of indirection from 'int'
+     1>testing.c(22): warning C4305: '=' : truncation from 'double' to 'float'
+     1>testing.c(23): warning C4305: '=' : truncation from 'double' to 'float'
+     1>testing.c(25): warning C4047: 'initializing' : 'float *' differs in levels of indirection from 'int'
+       Link:
+         C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\bin\link.exe /ERRORREPORT:PROMPT /OUT:"C:\Concierge\opencl\Debug\Concierge.exe" /VERBOSE /INCREMENTAL /NOLOGO /LIBPATH:C:\Concierge\opencl projcl.lib kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib /MANIFEST /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /manifest:embed /DEBUG /PDB:"C:\Concierge\opencl\Debug\Concierge.pdb" /SUBSYSTEM:CONSOLE /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:"C:\Concierge\opencl\Debug\Concierge.lib" /MACHINE:X86 Debug\testing.obj
+         C:\ProjCL\Debug\projcl.obj
+         C:\ProjCL\Debug\projcl_datum.obj
+         C:\ProjCL\Debug\projcl_geodesic.obj
+         C:\ProjCL\Debug\projcl_project.obj
+         C:\ProjCL\Debug\projcl_run.obj
+         C:\ProjCL\Debug\projcl_spheroid.obj
+         C:\ProjCL\Debug\projcl_util.obj
+         C:\ProjCL\Debug\projcl_warp.obj
+         
+         Starting pass 1
+         Processed /DEFAULTLIB:MSVCRTD
+         Processed /DEFAULTLIB:OLDNAMES
+         
+         Searching libraries
+             Searching projcl.lib:
+             Searching C:\Program Files (x86)\Windows Kits\8.1\lib\winv6.3\um\x86\kernel32.lib:
+               Found __imp__FindClose@4
+                 Referenced in projcl.obj
+                 Loaded kernel32.lib(KERNEL32.dll)
+               Found __imp__FindFirstFileW@8
+                 Referenced in projcl.obj
+                 Loaded kernel32.lib(KERNEL32.dll)
+               Found __imp__FindNextFileW@8
+                 Referenced in projcl.obj
+                 Loaded kernel32.lib(KERNEL32.dll)
+               Found __imp__GetFullPathNameW@16
+                 Referenced in projcl.obj
+                 Loaded kernel32.lib(KERNEL32.dll)
+               Found __IMPORT_DESCRIPTOR_KERNEL32
+                 Referenced in kernel32.lib(KERNEL32.dll)
+                 Referenced in kernel32.lib(KERNEL32.dll)
+                 Referenced in kernel32.lib(KERNEL32.dll)
+                 Referenced in kernel32.lib(KERNEL32.dll)
+                 Loaded kernel32.lib(KERNEL32.dll)
+               Found __NULL_IMPORT_DESCRIPTOR
+                 Referenced in kernel32.lib(KERNEL32.dll)
+                 Loaded kernel32.lib(KERNEL32.dll)
+               Found KERNEL32_NULL_THUNK_DATA
+                 Referenced in kernel32.lib(KERNEL32.dll)
+                 Loaded kernel32.lib(KERNEL32.dll)
+             Searching C:\Program Files (x86)\Windows Kits\8.1\lib\winv6.3\um\x86\user32.lib:
+             Searching C:\Program Files (x86)\Windows Kits\8.1\lib\winv6.3\um\x86\gdi32.lib:
+             Searching C:\Program Files (x86)\Windows Kits\8.1\lib\winv6.3\um\x86\winspool.lib:
+             Searching C:\Program Files (x86)\Windows Kits\8.1\lib\winv6.3\um\x86\comdlg32.lib:
+             Searching C:\Program Files (x86)\Windows Kits\8.1\lib\winv6.3\um\x86\advapi32.lib:
+             Searching C:\Program Files (x86)\Windows Kits\8.1\lib\winv6.3\um\x86\shell32.lib:
+             Searching C:\Program Files (x86)\Windows Kits\8.1\lib\winv6.3\um\x86\ole32.lib:
+             Searching C:\Program Files (x86)\Windows Kits\8.1\lib\winv6.3\um\x86\oleaut32.lib:
+             Searching C:\Program Files (x86)\Windows Kits\8.1\lib\winv6.3\um\x86\uuid.lib:
+             Searching C:\Program Files (x86)\Windows Kits\8.1\lib\winv6.3\um\x86\odbc32.lib:
+             Searching C:\Program Files (x86)\Windows Kits\8.1\lib\winv6.3\um\x86\odbccp32.lib:
+             Searching C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\lib\MSVCRTD.lib:
+               Found _printf
+                 Referenced in testing.obj
+                 Loaded MSVCRTD.lib(MSVCR120D.dll)
+               Found _malloc
+                 Referenced in testing.obj
+                 Loaded MSVCRTD.lib(MSVCR120D.dll)
+               Found @_RTC_CheckStackVars@8
+                 Referenced in projcl_warp.obj
+                 Referenced in projcl_project.obj
+                 Referenced in projcl_run.obj
+                 Referenced in projcl_spheroid.obj
+                 Referenced in projcl_util.obj
+                 Referenced in testing.obj
+                 Referenced in projcl.obj
+                 Referenced in projcl_datum.obj
+                 Referenced in projcl_geodesic.obj
+                 Loaded MSVCRTD.lib(stack.obj)
+               Found __RTC_InitBase
+                 Referenced in projcl_warp.obj
+                 Referenced in projcl_project.obj
+                 Referenced in projcl_run.obj
+                 Referenced in projcl_spheroid.obj
+                 Referenced in projcl_util.obj
+                 Referenced in testing.obj
+                 Referenced in projcl.obj
+                 Referenced in projcl_datum.obj
+                 Referenced in projcl_geodesic.obj
+                 Loaded MSVCRTD.lib(init.obj)
+               Found __fltused
+                 Referenced in projcl_spheroid.obj
+                 Referenced in projcl_util.obj
+                 Referenced in projcl_warp.obj
+                 Referenced in testing.obj
+                 Referenced in projcl_geodesic.obj
+                 Referenced in projcl_project.obj
+                 Referenced in projcl_run.obj
+                 Loaded MSVCRTD.lib(dllsupp.obj)
+               Found ___report_rangecheckfailure
+                 Referenced in projcl.obj
+                 Loaded MSVCRTD.lib(gs_report.obj)
+               Found __set_errno
+                 Referenced in projcl.obj
+                 Loaded MSVCRTD.lib(MSVCR120D.dll)
+               Found __imp__sprintf
+                 Referenced in projcl.obj
+                 Referenced in projcl_util.obj
+                 Loaded MSVCRTD.lib(MSVCR120D.dll)
+               Found _memset
+                 Referenced in projcl.obj
+                 Loaded MSVCRTD.lib(MSVCR120D.dll)
+               Found _strcmp
+                 Referenced in projcl.obj
+                 Loaded MSVCRTD.lib(MSVCR120D.dll)
+               Found _strlen
+                 Referenced in projcl.obj
+                 Loaded MSVCRTD.lib(MSVCR120D.dll)
+               Found __imp__strstr
+                 Referenced in projcl.obj
+                 Loaded MSVCRTD.lib(MSVCR120D.dll)
+               Found __imp__mbstowcs_s
+                 Referenced in projcl.obj
+                 Loaded MSVCRTD.lib(MSVCR120D.dll)
+               Found __imp__wcstombs_s
+                 Referenced in projcl.obj
+                 Loaded MSVCRTD.lib(MSVCR120D.dll)
+               Found __imp__free
+                 Referenced in projcl_run.obj
+                 Referenced in projcl_warp.obj
+                 Referenced in projcl.obj
+                 Referenced in projcl_datum.obj
+                 Referenced in projcl_geodesic.obj
+                 Referenced in projcl_project.obj
+                 Loaded MSVCRTD.lib(MSVCR120D.dll)
+               Found @__security_check_cookie@4
+                 Referenced in projcl_util.obj
+                 Referenced in projcl_warp.obj
+                 Referenced in projcl.obj
+                 Referenced in projcl_project.obj
+                 Referenced in projcl_run.obj
+                 Referenced in projcl_spheroid.obj
+                 Loaded MSVCRTD.lib(secchk.obj)
+               Found __RTC_UninitUse
+                 Referenced in projcl.obj
+                 Referenced in projcl_run.obj
+                 Loaded MSVCRTD.lib(error.obj)
+               Found __chkstk
+                 Referenced in projcl.obj
+                 Loaded MSVCRTD.lib(chkstk.obj)
+               Found ___security_cookie
+                 Referenced in MSVCRTD.lib(error.obj)
+                 Referenced in projcl_util.obj
+                 Referenced in projcl_warp.obj
+                 Referenced in MSVCRTD.lib(gs_report.obj)
+                 Referenced in MSVCRTD.lib(secchk.obj)
+                 Referenced in projcl.obj
+                 Referenced in projcl_project.obj
+                 Referenced in projcl_run.obj
+                 Referenced in projcl_spheroid.obj
+                 Loaded MSVCRTD.lib(gs_cookie.obj)
+               Found _cos
+                 Referenced in projcl_project.obj
+                 Referenced in projcl_run.obj
+                 Loaded MSVCRTD.lib(MSVCR120D.dll)
+               Found _fabs
+                 Referenced in projcl_project.obj
+                 Referenced in projcl_run.obj
+                 Loaded MSVCRTD.lib(MSVCR120D.dll)
+               Found _log
+                 Referenced in projcl_project.obj
+                 Referenced in projcl_run.obj
+                 Referenced in projcl_spheroid.obj
+                 Loaded MSVCRTD.lib(MSVCR120D.dll)
+               Found _tan
+                 Referenced in projcl_project.obj
+                 Referenced in projcl_run.obj
+                 Loaded MSVCRTD.lib(MSVCR120D.dll)
+               Found _pow
+                 Referenced in projcl_run.obj
+                 Loaded MSVCRTD.lib(MSVCR120D.dll)
+               Found _sin
+                 Referenced in projcl_run.obj
+                 Loaded MSVCRTD.lib(MSVCR120D.dll)
+               Found _sqrt
+                 Referenced in projcl_run.obj
+                 Referenced in projcl_spheroid.obj
+                 Loaded MSVCRTD.lib(MSVCR120D.dll)
+               Found __imp___HUGE
+                 Referenced in projcl_spheroid.obj
+                 Loaded MSVCRTD.lib(MSVCR120D.dll)
+               Found __imp__strncmp
+                 Referenced in projcl_util.obj
+                 Loaded MSVCRTD.lib(MSVCR120D.dll)
+               Found _mainCRTStartup
+                 Loaded MSVCRTD.lib(crtexe.obj)
+               Found __IMPORT_DESCRIPTOR_MSVCR120D
+                 Referenced in MSVCRTD.lib(MSVCR120D.dll)
+                 Referenced in MSVCRTD.lib(MSVCR120D.dll)
+                 Referenced in MSVCRTD.lib(MSVCR120D.dll)
+                 Referenced in MSVCRTD.lib(MSVCR120D.dll)
+                 Referenced in MSVCRTD.lib(MSVCR120D.dll)
+                 Referenced in MSVCRTD.lib(MSVCR120D.dll)
+                 Referenced in MSVCRTD.lib(MSVCR120D.dll)
+                 Referenced in MSVCRTD.lib(MSVCR120D.dll)
+                 Referenced in MSVCRTD.lib(MSVCR120D.dll)
+                 Referenced in MSVCRTD.lib(MSVCR120D.dll)
+                 Referenced in MSVCRTD.lib(MSVCR120D.dll)
+                 Referenced in MSVCRTD.lib(MSVCR120D.dll)
+                 Referenced in MSVCRTD.lib(MSVCR120D.dll)
+                 Referenced in MSVCRTD.lib(MSVCR120D.dll)
+                 Referenced in MSVCRTD.lib(MSVCR120D.dll)
+                 Referenced in MSVCRTD.lib(MSVCR120D.dll)
+                 Referenced in MSVCRTD.lib(MSVCR120D.dll)
+                 Referenced in MSVCRTD.lib(MSVCR120D.dll)
+                 Referenced in MSVCRTD.lib(MSVCR120D.dll)
+                 Referenced in MSVCRTD.lib(MSVCR120D.dll)
+                 Loaded MSVCRTD.lib(MSVCR120D.dll)
+               Found __RTC_SetErrorFuncW
+                 Referenced in MSVCRTD.lib(init.obj)
+                 Loaded MSVCRTD.lib(userapi.obj)
+               Found __CRT_RTC_INITW
+                 Referenced in MSVCRTD.lib(init.obj)
+                 Loaded MSVCRTD.lib(MSVCR120D.dll)
+               Found __crt_debugger_hook
+                 Referenced in MSVCRTD.lib(gs_report.obj)
+                 Loaded MSVCRTD.lib(MSVCR120D.dll)
+               Found ___crtUnhandledException
+                 Referenced in MSVCRTD.lib(gs_report.obj)
+                 Loaded MSVCRTD.lib(MSVCR120D.dll)
+               Found ___crtTerminateProcess
+                 Referenced in MSVCRTD.lib(gs_report.obj)
+                 Loaded MSVCRTD.lib(MSVCR120D.dll)
+               Found "int __cdecl _RTC_GetSrcLine(unsigned char *,wchar_t *,unsigned long,int *,wchar_t *,unsigned long)" (?_RTC_GetSrcLine@@YAHPAEPA_WKPAH1K@Z)
+                 Referenced in MSVCRTD.lib(error.obj)
+                 Loaded MSVCRTD.lib(pdblkup.obj)
+               Found __except_handler4
+                 Referenced in MSVCRTD.lib(error.obj)
+                 Referenced in MSVCRTD.lib(crtexe.obj)
+                 Loaded MSVCRTD.lib(chandler4gs.obj)
+               Found ___CxxSetUnhandledExceptionFilter
+                 Referenced in MSVCRTD.lib(crtexe.obj)
+                 Loaded MSVCRTD.lib(unhandld.obj)
+               Found __XcptFilter
+                 Referenced in MSVCRTD.lib(crtexe.obj)
+                 Loaded MSVCRTD.lib(MSVCR120D.dll)
+               Found __amsg_exit
+                 Referenced in MSVCRTD.lib(crtexe.obj)
+                 Loaded MSVCRTD.lib(MSVCR120D.dll)
+               Found __setargv
+                 Referenced in MSVCRTD.lib(crtexe.obj)
+                 Loaded MSVCRTD.lib(dllargv.obj)
+               Found __imp____getmainargs
+                 Referenced in MSVCRTD.lib(crtexe.obj)
+                 Loaded MSVCRTD.lib(MSVCR120D.dll)
+               Found __imp____set_app_type
+                 Referenced in MSVCRTD.lib(crtexe.obj)
+                 Loaded MSVCRTD.lib(MSVCR120D.dll)
+               Found __imp___CrtDbgReportW
+                 Referenced in MSVCRTD.lib(crtexe.obj)
+                 Loaded MSVCRTD.lib(MSVCR120D.dll)
+               Found __imp___CrtSetCheckCount
+                 Referenced in MSVCRTD.lib(crtexe.obj)
+                 Loaded MSVCRTD.lib(MSVCR120D.dll)
+               Found __IsNonwritableInCurrentImage
+                 Referenced in MSVCRTD.lib(crtexe.obj)
+                 Loaded MSVCRTD.lib(pesect.obj)
+               Found __imp__exit
+                 Referenced in MSVCRTD.lib(crtexe.obj)
+                 Loaded MSVCRTD.lib(MSVCR120D.dll)
+               Found __imp___exit
+                 Referenced in MSVCRTD.lib(crtexe.obj)
+                 Loaded MSVCRTD.lib(MSVCR120D.dll)
+               Found __imp___cexit
+                 Referenced in MSVCRTD.lib(crtexe.obj)
+                 Loaded MSVCRTD.lib(MSVCR120D.dll)
+               Found ___security_init_cookie
+                 Referenced in MSVCRTD.lib(crtexe.obj)
+                 Loaded MSVCRTD.lib(gs_support.obj)
+               Found __matherr
+                 Referenced in MSVCRTD.lib(crtexe.obj)
+                 Loaded MSVCRTD.lib(merr.obj)
+               Found _atexit
+                 Referenced in MSVCRTD.lib(crtexe.obj)
+                 Loaded MSVCRTD.lib(atonexit.obj)
+               Found __RTC_Initialize
+                 Referenced in MSVCRTD.lib(crtexe.obj)
+                 Loaded MSVCRTD.lib(initsect.obj)
+               Found __imp___configthreadlocale
+                 Referenced in MSVCRTD.lib(crtexe.obj)
+                 Loaded MSVCRTD.lib(MSVCR120D.dll)
+               Found __setdefaultprecision
+                 Referenced in MSVCRTD.lib(crtexe.obj)
+                 Loaded MSVCRTD.lib(fp8.obj)
+               Found __imp____setusermatherr
+                 Referenced in MSVCRTD.lib(crtexe.obj)
+                 Loaded MSVCRTD.lib(MSVCR120D.dll)
+               Found __initterm_e
+                 Referenced in MSVCRTD.lib(crtexe.obj)
+                 Loaded MSVCRTD.lib(MSVCR120D.dll)
+               Found __initterm
+                 Referenced in MSVCRTD.lib(crtexe.obj)
+                 Loaded MSVCRTD.lib(MSVCR120D.dll)
+               Found ___globallocalestatus
+                 Referenced in MSVCRTD.lib(crtexe.obj)
+                 Loaded MSVCRTD.lib(xthdloc.obj)
+               Found __commode
+                 Referenced in MSVCRTD.lib(crtexe.obj)
+                 Loaded MSVCRTD.lib(xncommod.obj)
+               Found __dowildcard
+                 Referenced in MSVCRTD.lib(crtexe.obj)
+                 Loaded MSVCRTD.lib(wildcard.obj)
+               Found __newmode
+                 Referenced in MSVCRTD.lib(crtexe.obj)
+                 Loaded MSVCRTD.lib(_newmode.obj)
+               Found __imp____initenv
+                 Referenced in MSVCRTD.lib(crtexe.obj)
+                 Loaded MSVCRTD.lib(MSVCR120D.dll)
+               Found ___native_startup_state
+                 Referenced in MSVCRTD.lib(crtexe.obj)
+                 Loaded MSVCRTD.lib(natstart.obj)
+               Found __fmode
+                 Referenced in MSVCRTD.lib(crtexe.obj)
+                 Loaded MSVCRTD.lib(xtxtmode.obj)
+               Found __imp___fmode
+                 Referenced in MSVCRTD.lib(crtexe.obj)
+                 Loaded MSVCRTD.lib(MSVCR120D.dll)
+               Found __imp___commode
+                 Referenced in MSVCRTD.lib(crtexe.obj)
+                 Loaded MSVCRTD.lib(MSVCR120D.dll)
+               Found ___xi_a
+                 Referenced in MSVCRTD.lib(crtexe.obj)
+                 Loaded MSVCRTD.lib(cinitexe.obj)
+         Processed /DEFAULTLIB:kernel32.lib
+          Processed /DISALLOWLIB:libcmt.lib
+          Processed /DISALLOWLIB:libcmtd.lib
+          Processed /DISALLOWLIB:msvcrt.lib
+               Found MSVCR120D_NULL_THUNK_DATA
+                 Referenced in MSVCRTD.lib(MSVCR120D.dll)
+                 Loaded MSVCRTD.lib(MSVCR120D.dll)
+               Found _wcscpy_s
+                 Referenced in MSVCRTD.lib(pdblkup.obj)
+                 Loaded MSVCRTD.lib(MSVCR120D.dll)
+               Found __wmakepath_s
+                 Referenced in MSVCRTD.lib(pdblkup.obj)
+                 Loaded MSVCRTD.lib(MSVCR120D.dll)
+               Found __wsplitpath_s
+                 Referenced in MSVCRTD.lib(pdblkup.obj)
+                 Loaded MSVCRTD.lib(MSVCR120D.dll)
+               Found __except_handler4_common
+                 Referenced in MSVCRTD.lib(chandler4gs.obj)
+                 Loaded MSVCRTD.lib(MSVCR120D.dll)
+               Found "void __cdecl terminate(void)" (?terminate@@YAXXZ)
+                 Referenced in MSVCRTD.lib(unhandld.obj)
+                 Loaded MSVCRTD.lib(MSVCR120D.dll)
+               Found ___crtSetUnhandledExceptionFilter
+                 Referenced in MSVCRTD.lib(unhandld.obj)
+                 Loaded MSVCRTD.lib(MSVCR120D.dll)
+               Found __lock
+                 Referenced in MSVCRTD.lib(atonexit.obj)
+                 Loaded MSVCRTD.lib(MSVCR120D.dll)
+               Found __unlock
+                 Referenced in MSVCRTD.lib(atonexit.obj)
+                 Loaded MSVCRTD.lib(MSVCR120D.dll)
+               Found __imp___calloc_dbg
+                 Referenced in MSVCRTD.lib(atonexit.obj)
+                 Loaded MSVCRTD.lib(MSVCR120D.dll)
+               Found ___dllonexit
+                 Referenced in MSVCRTD.lib(atonexit.obj)
+                 Loaded MSVCRTD.lib(MSVCR120D.dll)
+               Found __imp___onexit
+                 Referenced in MSVCRTD.lib(atonexit.obj)
+                 Loaded MSVCRTD.lib(MSVCR120D.dll)
+               Found __invoke_watson
+                 Referenced in MSVCRTD.lib(fp8.obj)
+                 Loaded MSVCRTD.lib(MSVCR120D.dll)
+               Found __controlfp_s
+                 Referenced in MSVCRTD.lib(fp8.obj)
+                 Loaded MSVCRTD.lib(MSVCR120D.dll)
+             Searching C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\lib\OLDNAMES.lib:
+               Found _open
+                 Referenced in projcl.obj
+                 Loaded OLDNAMES.lib(open.obj)
+               Found _read
+                 Referenced in projcl.obj
+                 Loaded OLDNAMES.lib(read.obj)
+               Found _close
+                 Referenced in projcl.obj
+                 Loaded OLDNAMES.lib(close.obj)
+             Searching projcl.lib:
+             Searching C:\Program Files (x86)\Windows Kits\8.1\lib\winv6.3\um\x86\kernel32.lib:
+               Found __imp__IsDebuggerPresent@0
+                 Referenced in MSVCRTD.lib(gs_report.obj)
+                 Referenced in MSVCRTD.lib(error.obj)
+                 Loaded kernel32.lib(KERNEL32.dll)
+               Found _IsProcessorFeaturePresent@4
+                 Referenced in MSVCRTD.lib(gs_report.obj)
+                 Loaded kernel32.lib(KERNEL32.dll)
+               Found __imp__RaiseException@16
+                 Referenced in MSVCRTD.lib(error.obj)
+                 Loaded kernel32.lib(KERNEL32.dll)
+               Found __imp__GetLastError@0
+                 Referenced in MSVCRTD.lib(error.obj)
+                 Referenced in MSVCRTD.lib(pdblkup.obj)
+                 Loaded kernel32.lib(KERNEL32.dll)
+               Found __imp__GetProcAddress@8
+                 Referenced in MSVCRTD.lib(error.obj)
+                 Referenced in MSVCRTD.lib(pdblkup.obj)
+                 Loaded kernel32.lib(KERNEL32.dll)
+               Found __imp__LoadLibraryExW@12
+                 Referenced in MSVCRTD.lib(error.obj)
+                 Referenced in MSVCRTD.lib(pdblkup.obj)
+                 Loaded kernel32.lib(KERNEL32.dll)
+               Found __imp__MultiByteToWideChar@24
+                 Referenced in MSVCRTD.lib(error.obj)
+                 Loaded kernel32.lib(KERNEL32.dll)
+               Found __imp__WideCharToMultiByte@32
+                 Referenced in MSVCRTD.lib(error.obj)
+                 Loaded kernel32.lib(KERNEL32.dll)
+               Found __imp__EncodePointer@4
+                 Referenced in MSVCRTD.lib(crtexe.obj)
+                 Referenced in MSVCRTD.lib(atonexit.obj)
+                 Loaded kernel32.lib(KERNEL32.dll)
+               Found __imp__HeapAlloc@12
+                 Referenced in MSVCRTD.lib(pdblkup.obj)
+                 Loaded kernel32.lib(KERNEL32.dll)
+               Found __imp__HeapFree@12
+                 Referenced in MSVCRTD.lib(pdblkup.obj)
+                 Loaded kernel32.lib(KERNEL32.dll)
+               Found __imp__GetProcessHeap@0
+                 Referenced in MSVCRTD.lib(pdblkup.obj)
+                 Loaded kernel32.lib(KERNEL32.dll)
+               Found __imp__VirtualQuery@12
+                 Referenced in MSVCRTD.lib(pdblkup.obj)
+                 Loaded kernel32.lib(KERNEL32.dll)
+               Found __imp__FreeLibrary@4
+                 Referenced in MSVCRTD.lib(pdblkup.obj)
+                 Loaded kernel32.lib(KERNEL32.dll)
+               Found __imp__GetModuleFileNameW@12
+                 Referenced in MSVCRTD.lib(pdblkup.obj)
+                 Loaded kernel32.lib(KERNEL32.dll)
+               Found __imp__GetModuleHandleW@4
+                 Referenced in MSVCRTD.lib(pdblkup.obj)
+                 Loaded kernel32.lib(KERNEL32.dll)
+               Found __imp__QueryPerformanceCounter@4
+                 Referenced in MSVCRTD.lib(gs_support.obj)
+                 Loaded kernel32.lib(KERNEL32.dll)
+               Found __imp__GetCurrentProcessId@0
+                 Referenced in MSVCRTD.lib(gs_support.obj)
+                 Loaded kernel32.lib(KERNEL32.dll)
+               Found __imp__GetCurrentThreadId@0
+                 Referenced in MSVCRTD.lib(gs_support.obj)
+                 Loaded kernel32.lib(KERNEL32.dll)
+               Found __imp__GetSystemTimeAsFileTime@4
+                 Referenced in MSVCRTD.lib(gs_support.obj)
+                 Loaded kernel32.lib(KERNEL32.dll)
+               Found __imp__DecodePointer@4
+                 Referenced in MSVCRTD.lib(atonexit.obj)
+                 Loaded kernel32.lib(KERNEL32.dll)
+             Searching C:\Program Files (x86)\Windows Kits\8.1\lib\winv6.3\um\x86\user32.lib:
+             Searching C:\Program Files (x86)\Windows Kits\8.1\lib\winv6.3\um\x86\gdi32.lib:
+             Searching C:\Program Files (x86)\Windows Kits\8.1\lib\winv6.3\um\x86\winspool.lib:
+             Searching C:\Program Files (x86)\Windows Kits\8.1\lib\winv6.3\um\x86\comdlg32.lib:
+             Searching C:\Program Files (x86)\Windows Kits\8.1\lib\winv6.3\um\x86\advapi32.lib:
+             Searching C:\Program Files (x86)\Windows Kits\8.1\lib\winv6.3\um\x86\shell32.lib:
+             Searching C:\Program Files (x86)\Windows Kits\8.1\lib\winv6.3\um\x86\ole32.lib:
+             Searching C:\Program Files (x86)\Windows Kits\8.1\lib\winv6.3\um\x86\oleaut32.lib:
+             Searching C:\Program Files (x86)\Windows Kits\8.1\lib\winv6.3\um\x86\uuid.lib:
+             Searching C:\Program Files (x86)\Windows Kits\8.1\lib\winv6.3\um\x86\odbc32.lib:
+             Searching C:\Program Files (x86)\Windows Kits\8.1\lib\winv6.3\um\x86\odbccp32.lib:
+             Searching C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\lib\MSVCRTD.lib:
+               Found __open
+                 Referenced in OLDNAMES.lib(open.obj)
+                 Loaded MSVCRTD.lib(MSVCR120D.dll)
+               Found __read
+                 Referenced in OLDNAMES.lib(read.obj)
+                 Loaded MSVCRTD.lib(MSVCR120D.dll)
+               Found __close
+                 Referenced in OLDNAMES.lib(close.obj)
+                 Loaded MSVCRTD.lib(MSVCR120D.dll)
+         
+         Finished searching libraries
+         
+         Finished pass 1
+         
+         
+         Searching libraries
+             Searching projcl.lib:
+             Searching C:\Program Files (x86)\Windows Kits\8.1\lib\winv6.3\um\x86\kernel32.lib:
+             Searching C:\Program Files (x86)\Windows Kits\8.1\lib\winv6.3\um\x86\user32.lib:
+             Searching C:\Program Files (x86)\Windows Kits\8.1\lib\winv6.3\um\x86\gdi32.lib:
+             Searching C:\Program Files (x86)\Windows Kits\8.1\lib\winv6.3\um\x86\winspool.lib:
+             Searching C:\Program Files (x86)\Windows Kits\8.1\lib\winv6.3\um\x86\comdlg32.lib:
+             Searching C:\Program Files (x86)\Windows Kits\8.1\lib\winv6.3\um\x86\advapi32.lib:
+             Searching C:\Program Files (x86)\Windows Kits\8.1\lib\winv6.3\um\x86\shell32.lib:
+             Searching C:\Program Files (x86)\Windows Kits\8.1\lib\winv6.3\um\x86\ole32.lib:
+             Searching C:\Program Files (x86)\Windows Kits\8.1\lib\winv6.3\um\x86\oleaut32.lib:
+             Searching C:\Program Files (x86)\Windows Kits\8.1\lib\winv6.3\um\x86\uuid.lib:
+             Searching C:\Program Files (x86)\Windows Kits\8.1\lib\winv6.3\um\x86\odbc32.lib:
+             Searching C:\Program Files (x86)\Windows Kits\8.1\lib\winv6.3\um\x86\odbccp32.lib:
+             Searching C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\lib\MSVCRTD.lib:
+               Found __load_config_used
+                 Loaded MSVCRTD.lib(loadcfg.obj)
+             Searching C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\lib\OLDNAMES.lib:
+             Searching projcl.lib:
+             Searching C:\Program Files (x86)\Windows Kits\8.1\lib\winv6.3\um\x86\kernel32.lib:
+             Searching C:\Program Files (x86)\Windows Kits\8.1\lib\winv6.3\um\x86\user32.lib:
+             Searching C:\Program Files (x86)\Windows Kits\8.1\lib\winv6.3\um\x86\gdi32.lib:
+             Searching C:\Program Files (x86)\Windows Kits\8.1\lib\winv6.3\um\x86\winspool.lib:
+             Searching C:\Program Files (x86)\Windows Kits\8.1\lib\winv6.3\um\x86\comdlg32.lib:
+             Searching C:\Program Files (x86)\Windows Kits\8.1\lib\winv6.3\um\x86\advapi32.lib:
+             Searching C:\Program Files (x86)\Windows Kits\8.1\lib\winv6.3\um\x86\shell32.lib:
+             Searching C:\Program Files (x86)\Windows Kits\8.1\lib\winv6.3\um\x86\ole32.lib:
+             Searching C:\Program Files (x86)\Windows Kits\8.1\lib\winv6.3\um\x86\oleaut32.lib:
+             Searching C:\Program Files (x86)\Windows Kits\8.1\lib\winv6.3\um\x86\uuid.lib:
+             Searching C:\Program Files (x86)\Windows Kits\8.1\lib\winv6.3\um\x86\odbc32.lib:
+             Searching C:\Program Files (x86)\Windows Kits\8.1\lib\winv6.3\um\x86\odbccp32.lib:
+         
+         Finished searching libraries
+         
+         Invoking rc.exe:
+          /v
+          /x
+          /fo
+          "C:\Users\mzemsky\AppData\Local\Temp\lnk{84D7D975-DF5D-4192-82C5-26EDACC49ACC}.tmp"
+          "C:\Users\mzemsky\AppData\Local\Temp\lnk{7ED94DF4-D47C-48EE-A991-3C11F87FA47B}.tmp"
+         Microsoft (R) Windows (R) Resource Compiler Version 6.3.9600.17200
+         
+         Copyright (C) Microsoft Corporation.  All rights reserved.
+         
+         
+         Creating C:\Users\mzemsky\AppData\Local\Temp\lnk{84D7D975-DF5D-4192-82C5-26EDACC49ACC}.tmp
+         
+         Using codepage 1252 as default
+         
+         C:\Users\mzemsky\AppData\Local\Temp\lnk{7ED94DF4-D47C-48EE-A991-3C11F87FA47B}.tmp.
+         Writing 24:1,	lang:0x409,	size 381
+         
+         Invoking cvtres.exe:
+          /machine:x86
+          /verbose
+          /out:"C:\Users\mzemsky\AppData\Local\Temp\lnk{96322A80-11EB-45A6-BABB-E42F6A2AED77}.tmp"
+          /readonly
+          "C:\Users\mzemsky\AppData\Local\Temp\lnk{84D7D975-DF5D-4192-82C5-26EDACC49ACC}.tmp"
+         Microsoft (R) Windows Resource To Object Converter Version 12.00.21005.1
+         Copyright (C) Microsoft Corporation.  All rights reserved.
+         
+         adding resource. type:MANIFEST, name:1, language:0x0409, flags:0x30, size:381
+         
+         Unused libraries:
+           projcl.lib
+           C:\Program Files (x86)\Windows Kits\8.1\lib\winv6.3\um\x86\user32.lib
+           C:\Program Files (x86)\Windows Kits\8.1\lib\winv6.3\um\x86\gdi32.lib
+           C:\Program Files (x86)\Windows Kits\8.1\lib\winv6.3\um\x86\winspool.lib
+           C:\Program Files (x86)\Windows Kits\8.1\lib\winv6.3\um\x86\comdlg32.lib
+           C:\Program Files (x86)\Windows Kits\8.1\lib\winv6.3\um\x86\advapi32.lib
+           C:\Program Files (x86)\Windows Kits\8.1\lib\winv6.3\um\x86\shell32.lib
+           C:\Program Files (x86)\Windows Kits\8.1\lib\winv6.3\um\x86\ole32.lib
+           C:\Program Files (x86)\Windows Kits\8.1\lib\winv6.3\um\x86\oleaut32.lib
+           C:\Program Files (x86)\Windows Kits\8.1\lib\winv6.3\um\x86\uuid.lib
+           C:\Program Files (x86)\Windows Kits\8.1\lib\winv6.3\um\x86\odbc32.lib
+           C:\Program Files (x86)\Windows Kits\8.1\lib\winv6.3\um\x86\odbccp32.lib
+         
+     1>projcl.obj : error LNK2019: unresolved external symbol _clGetPlatformIDs@12 referenced in function _oclGetPlatformID
+     1>projcl.obj : error LNK2019: unresolved external symbol _clGetPlatformInfo@20 referenced in function _oclGetPlatformID
+     1>projcl.obj : error LNK2019: unresolved external symbol _clGetDeviceIDs@24 referenced in function _pl_context_init
+     1>projcl.obj : error LNK2019: unresolved external symbol _clGetDeviceInfo@20 referenced in function _pl_context_init
+     1>projcl.obj : error LNK2019: unresolved external symbol _clCreateContext@24 referenced in function _pl_context_init
+     1>projcl.obj : error LNK2019: unresolved external symbol _clReleaseContext@4 referenced in function _pl_context_init
+     1>projcl.obj : error LNK2019: unresolved external symbol _clCreateCommandQueue@20 referenced in function _pl_context_init
+     1>projcl.obj : error LNK2019: unresolved external symbol _clReleaseCommandQueue@4 referenced in function _pl_context_init
+     1>projcl.obj : error LNK2019: unresolved external symbol _clCreateProgramWithSource@20 referenced in function _pl_compile_code
+     1>projcl.obj : error LNK2019: unresolved external symbol _clCreateProgramWithBinary@28 referenced in function _pl_load_code
+     1>projcl.obj : error LNK2019: unresolved external symbol _clReleaseProgram@4 referenced in function _pl_compile_code
+     1>projcl.obj : error LNK2019: unresolved external symbol _clBuildProgram@24 referenced in function _pl_compile_code
+     1>projcl.obj : error LNK2019: unresolved external symbol _clGetProgramInfo@20 referenced in function _pl_compile_code
+     1>projcl.obj : error LNK2019: unresolved external symbol _clGetProgramBuildInfo@24 referenced in function _pl_compile_code
+     1>projcl.obj : error LNK2019: unresolved external symbol _clCreateKernelsInProgram@16 referenced in function _pl_load_code
+     1>projcl.obj : error LNK2019: unresolved external symbol _clReleaseKernel@4 referenced in function _pl_unload_code
+     1>projcl.obj : error LNK2019: unresolved external symbol _strncasecmp referenced in function _pl_compile_code
+     1>projcl.obj : error LNK2019: unresolved external symbol _strcasecmp referenced in function _pl_compile_code
+     1>projcl_datum.obj : error LNK2019: unresolved external symbol _clCreateBuffer@24 referenced in function _pl_load_datum_shift_data
+     1>projcl_geodesic.obj : error LNK2001: unresolved external symbol _clCreateBuffer@24
+     1>projcl_project.obj : error LNK2001: unresolved external symbol _clCreateBuffer@24
+     1>projcl_warp.obj : error LNK2001: unresolved external symbol _clCreateBuffer@24
+     1>projcl_datum.obj : error LNK2019: unresolved external symbol _clReleaseMemObject@4 referenced in function _pl_load_datum_shift_data
+     1>projcl_geodesic.obj : error LNK2001: unresolved external symbol _clReleaseMemObject@4
+     1>projcl_project.obj : error LNK2001: unresolved external symbol _clReleaseMemObject@4
+     1>projcl_warp.obj : error LNK2001: unresolved external symbol _clReleaseMemObject@4
+     1>projcl_geodesic.obj : error LNK2019: unresolved external symbol _clSetKernelArg@16 referenced in function _pl_forward_geodesic_fixed_distance
+     1>projcl_run.obj : error LNK2001: unresolved external symbol _clSetKernelArg@16
+     1>projcl_warp.obj : error LNK2001: unresolved external symbol _clSetKernelArg@16
+     1>projcl_geodesic.obj : error LNK2019: unresolved external symbol _clEnqueueNDRangeKernel@36 referenced in function _pl_forward_geodesic_fixed_distance
+     1>projcl_run.obj : error LNK2001: unresolved external symbol _clEnqueueNDRangeKernel@36
+     1>projcl_warp.obj : error LNK2001: unresolved external symbol _clEnqueueNDRangeKernel@36
+     1>projcl_run.obj : error LNK2019: unresolved external symbol _clFinish@4 referenced in function _pl_read_buffer
+     1>projcl_warp.obj : error LNK2001: unresolved external symbol _clFinish@4
+     1>projcl_run.obj : error LNK2019: unresolved external symbol _clEnqueueReadBuffer@36 referenced in function _pl_read_buffer
+     1>projcl_util.obj : error LNK2019: unresolved external symbol _clGetKernelInfo@20 referenced in function __pl_find_kernel
+     1>projcl_warp.obj : error LNK2019: unresolved external symbol _clCreateImage2D@36 referenced in function _pl_load_image
+     1>projcl_warp.obj : error LNK2019: unresolved external symbol _clCreateImage3D@44 referenced in function _pl_load_image_array
+     1>projcl_warp.obj : error LNK2019: unresolved external symbol _clEnqueueReadImage@44 referenced in function _pl_sample_image
+     1>C:\Concierge\opencl\Debug\Concierge.exe : fatal error LNK1120: 28 unresolved externals
+     1>Done Building Project "C:\Concierge\opencl\Concierge.vcxproj" (Build target(s)) -- FAILED.
+
+Build FAILED.
+
+Time Elapsed 00:00:00.22

@@ -1,15 +1,17 @@
-#include "include/projcl/projcl.h"
+#include <projcl.h>
 
 int main() {
+  printf("started!\n");
   cl_int error = CL_SUCCESS;
+  printf("started!\n");
 
-  PLContext *ctx = pl_context_init(CL_DEVICE_TYPE_CPU, &error);
-
-  PLCode *code = pl_compile_code(ctx, "./kernel", 
+  PLContext *ctx = pl_context_init(CL_DEVICE_TYPE_GPU, &error);
+  printf("started!\n");
+  PLCode *code = pl_compile_code(ctx, "C:/Concierge/opencl/kernel", 
           PL_MODULE_DATUM | PL_MODULE_GEODESIC | PL_MODULE_PROJECTION, &error);
-
+  printf("started!\n");
   error = pl_load_code(ctx, code);
-
+  printf("started!\n");
   int count1 = 1;
   float *xy1_in = malloc(2 * count1 * sizeof(float));
   xy1_in[0] = 42.714326;

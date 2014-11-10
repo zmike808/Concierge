@@ -7,9 +7,9 @@
  *
  */
 
-#import <CL/cl.h>
+#include <CL/cl.h>
 
-#import "projcl_types.h"
+#include "projcl_types.h"
 
 PLContext *pl_context_init(cl_device_type type, cl_int *outError);
 void pl_context_free(PLContext *pl_ctx);

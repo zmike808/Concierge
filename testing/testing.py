@@ -48,7 +48,7 @@ class Geodata:
     return iter((self.lat, self.lng))
   
   def __str__(self):
-    s = "lat:\n%s\nlng:\n%s\norigin_dist:\n%s\nid: %s pid: %s" % (str(self.lat), str(self.lng), self.origin_dist, self.id, self.place_id)
+    s = "%s\n%s\norigin_dist:\n%s\nid: %s pid: %s" % (str(self.lat), str(self.lng), self.origin_dist, self.id, self.place_id)
     return s
     
 def build_geodata(json):

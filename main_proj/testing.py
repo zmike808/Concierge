@@ -1,15 +1,10 @@
-from geopy.distance import distance, great_circle
-import multiprocessing
 import json
 import itertools
-import math
-import sys
 import ctypes
 #import timeit
 import time
 
 cldist = ctypes.CDLL("./cldist.dll")
-
 
 ocords = (42.730678, -73.686662)
 class Geoarea:
@@ -44,55 +39,15 @@ def build_geodata(json):
   for j in json:
     g = Geodata(j["geometry"]["location"]["lat"], j["geometry"]["location"]["lng"], j["id"], j["place_id"])
     geodatas.append(g)
-  #geodatas.sort(key=lambda x: x.origin_dist)
   return geodatas
 
-def bmin(json):
-  geodatas = []
-  for j in json:
-    g = (j["geometry"]["location"]["lat"], j["geometry"]["location"]["lng"])
-    geodatas.append(g)
-  #geodatas.sort(key=lambda x: x.origin_dist)
-  return geodatas
-
-def compute_displacement(list):
-  list.append(list[0])
-  return great_circle(*list).meters
-
-def main():
-  
-  f1 = open("haircut.json")
-  f2 = open("grocery.json")  
-  f3 = open("car_wash.json")
-  delt = lambda x: print("Delta:", time.time() - x)
-  hjson = (json.load(f1))["results"]
-  gsjson = (json.load(f2))["results"]
-  gamestopjson = (json.load(f3))["results"]
-  f1.close()
-  f2.close()
-  f3.close()
-  f1 = f2 = f3 = None
-
-  haircut_geodata = build_geodata(hjson)
-  grocery_geodata = build_geodata(gsjson)
-  gamestop_geodata = build_geodata(gamestopjson)
-  
-  tlist = [haircut_geodata, grocery_geodata, gamestop_geodata]
-  tmp = time.time()
-  product = list(itertools.product(*tlist))
-  
-  magic = lambda x: itertools.chain.from_iterable(x)
-  print("delta:", time.time() - tmp)
-  hjson = gsjson = gamestopjson = None
+def get_top_n(product, n):
   coords = []
   total_size = len(product)
   tuple_size = len(product[0])
   print("tuple_size: ", tuple_size)
+  stress_test = False
   dtmp = time.time()
-  mini = []
-  limit = len(product)
-  stress_test = True
-
   for g in product:
     for x in g:
       coords.append(x.lat)
@@ -121,11 +76,10 @@ def main():
   magictime = time.time()
   result = cldist.compute_distance(arg1, coords_size, tuple_size, total_size, ctypes.byref(outarg))
   new_delta = time.time() - magictime
-  
-  with open("benchmark.txt", "a") as myf:
-    if stress_test:
+  if stress_test:
+    with open("benchmark.txt", "a") as myf:
       print("old method took: ", old_delta, "seconds!", file=myf)
-    print("OPENCL NEW BLACK MAGIC TOOK: ", new_delta, "SECONDS!", file=myf)
+      print("OPENCL NEW BLACK MAGIC TOOK: ", new_delta, "SECONDS!", file=myf)
   tmp = time.time()
   floatlist = [outarg[i] for i in range(total_size)]
   delt(tmp)
@@ -136,73 +90,36 @@ def main():
   sorted_by_dist = sorted(zip(product, floatlist), key=lambda x: x[1])
   delt(t)
   
-  top5 = sorted_by_dist[:5]
-  #print(top5)
+  return sorted_by_dist[:n]
+  
+
+def load_jsons(filepaths):
+  tlist = []
+  for filepath in filepaths:
+    f = open(filepath)
+    j = (json.load(f))["results"]
+    tlist.append(build_geodata(j))
+    f.close()
+  print("len of tlist:", len(tlist))
+  t = time.time()
+  product = list(itertools.product(*tlist))
+  print("time taken to generate product:", time.time() - t)
+  print("len of product:", len(product))
+  return product
+
+def main():
+  delt = lambda x: print("Delta:", time.time() - x)
+
+  filepaths = ["haircut.json", "grocery.json", "car_wash.json", "gamestop.json"]
+  product = load_jsons(filepaths)
+
+  top5 = get_top_n(product, 5)
   with open("output_cl.txt", "w") as of:
     for g, d in top5:
       ga = Geoarea(g, d)
       print(ga, file=of)
-  
-  
-  
-  
-  exit()
-  origin_coords = Geodata(42.730678, -73.686662)
-  
-  
-  haircut_geodata = grocery_geodata = gamestop_geodata = tlist = None
-  #print("time before forceing gc collection: ", str(time.time() - start_time))
-  gc.collect()
-  #print("time after force gc", str(time.time() - start_time))
-  
-  geoareas = []
-  threads = [] 
-
-  mpq = multiprocessing.Queue()
-
-  if(len(sys.argv) == 2):
-    nprocs = int(sys.argv[1])
-  else:
-    nprocs = 10
-
-  chunksize = int(math.ceil(len(product) / float(nprocs)))
-
-  for i in range(nprocs):#for i in range(chunks):
-    c = product[chunksize * i:chunksize * (i + 1)]
-    indstart = chunksize * i
-    indend = chunksize * (i + 1)
-    t = gThread(c, i, mpq, indstart, indend)
-    t.start()
-    threads.append(t)
-  
-  product = None
-  #print("time before forceing gc collection: ", str(time.time() - start_time))
-  gc.collect()
-  #print("time after force gc", str(time.time() - start_time))
-
-  for i in range(nprocs):
-    geoareas.extend(mpq.get())
-  
-  for t in threads:
-    t.join()
-  
-  mpq = threads = None 
-  #print("time before forceing gc collection: ", str(time.time() - start_time))
-  #print("time after force gc", str(time.time() - start_time))
-  
-  print("PRE-SORT TIME DELTA:", str(time.time() - start_time))
-  geoareas.sort(key=lambda x: x.delta)
-  print("POST-SORT TIME DELTA:", str(time.time() - start_time))
-  
-  output = open("output.txt",'w')
-
-  for x in range(5):
-    print(geoareas[x], file=output)
-  
-  output.close()
-  output = None
 
 if __name__ == '__main__':
-  #start_time = time.time()
+  start_time = time.time()
   main()
-  #print("process took a total of %s time!" % (str(time.time() - start_time)))
+  print("process took a total of %s time!" % (str(time.time() - start_time)))

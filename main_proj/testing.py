@@ -6,7 +6,10 @@ import math
 import time
 import sys
 import gc
- 
+import ctypes
+
+cldist = ctypes.CDLL("./cldist.dll")
+
 class gThread(multiprocessing.Process):
   def __init__(self, list, tid, queue):
     multiprocessing.Process.__init__(self)
@@ -64,8 +67,7 @@ def compute_displacement(list):
   return great_circle(*list).meters
 
 def main(start_time):
-  #gc.set_debug(gc.DEBUG_UNCOLLECTABLE)
-  #gc.set_debug(gc.DEBUG_STATS)
+  
   f1 = open("haircut.json")
   f2 = open("grocery.json")  
   f3 = open("car_wash.json")
@@ -81,12 +83,50 @@ def main(start_time):
   haircut_geodata = build_geodata(hjson)
   grocery_geodata = build_geodata(gsjson)
   gamestop_geodata = build_geodata(gamestopjson)
-  hjson = gsjson = gamestopjson = None
-
-  origin_coords = Geodata(42.730678, -73.686662)
-  
   tlist = [haircut_geodata, grocery_geodata, gamestop_geodata]#haircut_geodata + grocery_geodata + gamestop_geodata
   product = list(itertools.product(*tlist))
+  
+  hjson = gsjson = gamestopjson = None
+  #cldist.compute_distance.argtypes = [ctypes.POINTER(ctypes.c_float),                        ctypes.c_uint,                        ctypes.c_uint,                        ctypes.c_uint,                        ctypes.POINTER(ctypes.c_float)]
+  #cldist.compute_distance.restype = ctypes.POINTER(ctypes.c_float)
+  coords = []#[haircut_geodata[0].lat, haircut_geodata[0].lng]
+  cprod = product[0:5]
+  total_size = len(cprod)
+  tuple_size = len(product[0])
+  print("tuple_size: ", tuple_size)
+  cnt = 1
+  expected_results = []
+  for g in cprod:
+    print("tuple #:", cnt)
+    cnt = cnt + 1
+    expected_results.append(compute_displacement(list(g)))
+    for x in g:
+      coords.append(x.lat)
+      coords.append(x.lng)
+    #coords.append(g[0].lat)
+    #coords.append(g[0].lng)
+  coords_size = (len(coords))
+  #total_size = int( (coords_size / 2) )
+  print("len coords:", coords_size, "total size: ", total_size)
+  arg1 = (ctypes.c_float * coords_size)()
+  arg1[:] = coords
+  outarg = (ctypes.c_float * (total_size + 1))()
+  
+  pret = time.time()
+  #outarg = ctypes.cast(outarg, ctypes.POINTER(ctypes.c_float))
+  result = cldist.compute_distance(arg1, coords_size, tuple_size, total_size, ctypes.byref(outarg))
+  print("opencl epicness = ", time.time() - pret)
+  y = 0
+  for x in expected_results:
+    print("Expected: ", x, "Actual: ", outarg[y], "Diff: ", abs(x - outarg[y]))
+    y = y + 1
+  #for x in range(10):
+    #print(result[x])
+  exit()
+  origin_coords = Geodata(42.730678, -73.686662)
+  
+  
+  exit()
   haircut_geodata = grocery_geodata = gamestop_geodata = tlist = None
   #print("time before forceing gc collection: ", str(time.time() - start_time))
   gc.collect()

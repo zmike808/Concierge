@@ -1,0 +1,1 @@
+gcc -shared -g -w -L./ -I"C:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\v6.5\include" -lOpenCL64 ./compute_distances.c -o cldist.dll

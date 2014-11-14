@@ -3,27 +3,13 @@ import multiprocessing
 import json
 import itertools
 import math
-import time
 import sys
-import gc
 import ctypes
+#import timeit
+import time
 
 cldist = ctypes.CDLL("./cldist.dll")
 
-class gThread(multiprocessing.Process):
-  def __init__(self, list, tid, queue):
-    multiprocessing.Process.__init__(self)
-    self.tid = tid
-    self.list = list
-    self.queue = queue
-  def run(self):
-    tmp = []
-    for x in self.list:
-      geodatas = list(x)
-      delta = compute_displacement(geodatas)
-      ga = Geoarea(geodatas, delta)
-      tmp.append(ga)
-    self.queue.put(tmp)
 
 ocords = (42.730678, -73.686662)
 class Geoarea:
@@ -45,13 +31,12 @@ class Geodata:
     #self.clng = self.lng * (math.pi * 6378137 / 180)
     self.id = id
     self.place_id = pid
-    self.origin_dist = great_circle(ocords, (self.lat, self.lng)).meters
-  
+    self.origin_dist = None #great_circle(ocords, (self.lat, self.lng)).meters
   def __iter__(self):
     return iter((self.lat, self.lng))
   
   def __str__(self):
-    s = "%s\n%s\norigin_dist:\n%s\nid: %s pid: %s" % (str(self.lat), str(self.lng), self.origin_dist, self.id, self.place_id)
+    s = "(lat,lng): (%s, %s)\n id: %s pid: %s" % (str(self.lat), str(self.lng), self.id, self.place_id)
     return s
     
 def build_geodata(json):
@@ -59,19 +44,27 @@ def build_geodata(json):
   for j in json:
     g = Geodata(j["geometry"]["location"]["lat"], j["geometry"]["location"]["lng"], j["id"], j["place_id"])
     geodatas.append(g)
-  geodatas.sort(key=lambda x: x.origin_dist)
+  #geodatas.sort(key=lambda x: x.origin_dist)
+  return geodatas
+
+def bmin(json):
+  geodatas = []
+  for j in json:
+    g = (j["geometry"]["location"]["lat"], j["geometry"]["location"]["lng"])
+    geodatas.append(g)
+  #geodatas.sort(key=lambda x: x.origin_dist)
   return geodatas
 
 def compute_displacement(list):
   list.append(list[0])
   return great_circle(*list).meters
 
-def main(start_time):
+def main():
   
   f1 = open("haircut.json")
   f2 = open("grocery.json")  
   f3 = open("car_wash.json")
-      
+  delt = lambda x: print("Delta:", time.time() - x)
   hjson = (json.load(f1))["results"]
   gsjson = (json.load(f2))["results"]
   gamestopjson = (json.load(f3))["results"]
@@ -83,50 +76,80 @@ def main(start_time):
   haircut_geodata = build_geodata(hjson)
   grocery_geodata = build_geodata(gsjson)
   gamestop_geodata = build_geodata(gamestopjson)
-  tlist = [haircut_geodata, grocery_geodata, gamestop_geodata]#haircut_geodata + grocery_geodata + gamestop_geodata
+  
+  tlist = [haircut_geodata, grocery_geodata, gamestop_geodata]
+  tmp = time.time()
   product = list(itertools.product(*tlist))
   
+  magic = lambda x: itertools.chain.from_iterable(x)
+  print("delta:", time.time() - tmp)
   hjson = gsjson = gamestopjson = None
-  #cldist.compute_distance.argtypes = [ctypes.POINTER(ctypes.c_float),                        ctypes.c_uint,                        ctypes.c_uint,                        ctypes.c_uint,                        ctypes.POINTER(ctypes.c_float)]
-  #cldist.compute_distance.restype = ctypes.POINTER(ctypes.c_float)
-  coords = []#[haircut_geodata[0].lat, haircut_geodata[0].lng]
-  cprod = product[0:5]
-  total_size = len(cprod)
+  coords = []
+  total_size = len(product)
   tuple_size = len(product[0])
   print("tuple_size: ", tuple_size)
-  cnt = 1
-  expected_results = []
-  for g in cprod:
-    print("tuple #:", cnt)
-    cnt = cnt + 1
-    expected_results.append(compute_displacement(list(g)))
+  dtmp = time.time()
+  mini = []
+  limit = len(product)
+  stress_test = True
+
+  for g in product:
     for x in g:
       coords.append(x.lat)
       coords.append(x.lng)
-    #coords.append(g[0].lat)
-    #coords.append(g[0].lng)
+  print("time taken to go from megalist to x,ys...:", time.time() - dtmp)
+ 
+  if stress_test:
+    geoareas = []
+    stress = time.time()
+    for g in product:
+      geoareas.append(Geoarea(list(g), compute_displacement(list(g))))
+    old_delta = time.time() - stress
+    geoareas.sort(key=lambda x: x.delta)
+    with open("output.txt", "w") as out:
+      t5 = geoareas[:5]
+      for g in t5:
+        print(g, file=out)
+  
   coords_size = (len(coords))
-  #total_size = int( (coords_size / 2) )
+  
   print("len coords:", coords_size, "total size: ", total_size)
+  
   arg1 = (ctypes.c_float * coords_size)()
   arg1[:] = coords
-  outarg = (ctypes.c_float * (total_size + 1))()
-  
-  pret = time.time()
-  #outarg = ctypes.cast(outarg, ctypes.POINTER(ctypes.c_float))
+  outarg = (ctypes.c_float * (total_size))()
+  magictime = time.time()
   result = cldist.compute_distance(arg1, coords_size, tuple_size, total_size, ctypes.byref(outarg))
-  print("opencl epicness = ", time.time() - pret)
-  y = 0
-  for x in expected_results:
-    print("Expected: ", x, "Actual: ", outarg[y], "Diff: ", abs(x - outarg[y]))
-    y = y + 1
-  #for x in range(10):
-    #print(result[x])
+  new_delta = time.time() - magictime
+  
+  with open("benchmark.txt", "a") as myf:
+    if stress_test:
+      print("old method took: ", old_delta, "seconds!", file=myf)
+    print("OPENCL NEW BLACK MAGIC TOOK: ", new_delta, "SECONDS!", file=myf)
+  tmp = time.time()
+  floatlist = [outarg[i] for i in range(total_size)]
+  delt(tmp)
+  
+  print("flist len:", len(floatlist))
+  
+  t = time.time()
+  sorted_by_dist = sorted(zip(product, floatlist), key=lambda x: x[1])
+  delt(t)
+  
+  top5 = sorted_by_dist[:5]
+  #print(top5)
+  with open("output_cl.txt", "w") as of:
+    for g, d in top5:
+      ga = Geoarea(g, d)
+      print(ga, file=of)
+  
+  
+  
+  
   exit()
   origin_coords = Geodata(42.730678, -73.686662)
   
   
-  exit()
   haircut_geodata = grocery_geodata = gamestop_geodata = tlist = None
   #print("time before forceing gc collection: ", str(time.time() - start_time))
   gc.collect()
@@ -146,7 +169,9 @@ def main(start_time):
 
   for i in range(nprocs):#for i in range(chunks):
     c = product[chunksize * i:chunksize * (i + 1)]
-    t = gThread(c, i, mpq)
+    indstart = chunksize * i
+    indend = chunksize * (i + 1)
+    t = gThread(c, i, mpq, indstart, indend)
     t.start()
     threads.append(t)
   
@@ -163,7 +188,6 @@ def main(start_time):
   
   mpq = threads = None 
   #print("time before forceing gc collection: ", str(time.time() - start_time))
-  gc.collect()
   #print("time after force gc", str(time.time() - start_time))
   
   print("PRE-SORT TIME DELTA:", str(time.time() - start_time))
@@ -179,6 +203,6 @@ def main(start_time):
   output = None
 
 if __name__ == '__main__':
-  start_time = time.time()
-  main(start_time)
-  print("process took a total of %s time!" % (str(time.time() - start_time)))
+  #start_time = time.time()
+  main()
+  #print("process took a total of %s time!" % (str(time.time() - start_time)))

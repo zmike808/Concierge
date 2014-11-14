@@ -1,12 +1,9 @@
 __kernel void compute_distance(__global float2 *c, __global float *output, unsigned int tuple_size, unsigned int total_size) 
 {
-  //return;
- // if(0 == 1) {
   // total_size = # of tuples (which have a size of tuple_size)
   int g = get_global_id(0);
       
     int i = tuple_size * g; // index of tuple of lat,lng values
-    //if (g < total_size && (i+tuple_size) < (total_size*tuple_size) && i<(total_size*tuple_size)) {
 
     float dist = 0.0;
     int j = 0;
@@ -46,5 +43,4 @@ __kernel void compute_distance(__global float2 *c, __global float *output, unsig
        ));
     }
     output[g] = dist;
-  //}
 }

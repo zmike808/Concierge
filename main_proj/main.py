@@ -4,13 +4,21 @@ import ctypes
 from urllib.request import urlopen
 import time
 import datetime
+from geopy.geocoders import GoogleV3
+LOG_DIR = "./logs"
+type_list = ['accounting', 'airport', 'amusement_park', 'aquarium', 'art_gallery', 'atm', 'bakery', 'bank', 'bar', 'beauty_salon', 'bicycle_store', 'book_store', 'bowling_alley', 'bus_station', 'cafe', 'campground', 'car_dealer', 'car_rental', 'car_repair', 'car_wash', 'casino', 'cemetery', 'church', 'city_hall', 'clothing_store', 'convenience_store', 'courthouse', 'dentist', 'department_store', 'doctor', 'electrician', 'electronics_store', 'embassy', 'establishment', 'finance', 'fire_station', 'florist', 'food', 'funeral_home', 'furniture_store', 'gas_station', 'general_contractor', 'grocery_or_supermarket', 'gym', 'hair_care', 'hardware_store', 'health', 'hindu_temple', 'home_goods_store', 'hospital', 'insurance_agency', 'jewelry_store', 'laundry', 'lawyer', 'library', 'liquor_store', 'local_government_office', 'locksmith', 'lodging', 'meal_delivery', 'meal_takeaway', 'mosque', 'movie_rental', 'movie_theater', 'moving_company', 'museum', 'night_club', 'painter', 'park', 'parking', 'pet_store', 'pharmacy', 'physiotherapist', 'place_of_worship', 'plumber', 'police', 'post_office', 'real_estate_agency', 'restaurant', 'roofing_contractor', 'rv_park', 'school', 'shoe_store', 'shopping_mall', 'spa', 'stadium', 'storage', 'store', 'subway_station', 'synagogue', 'taxi_stand', 'train_station', 'travel_agency', 'university', 'veterinary_care', 'zoo']
 
 AUTH_KEY = "AIzaSyACatSX6QVEyeo-HKMlP9lreIgJDHRoDRs"
 tstamp = lambda x: "[%s] " % (str(datetime.datetime.fromtimestamp(x).strftime('%m-%d-%Y_%H:%M:%S')))
 fstamp = lambda x: "[%s]" % (str(datetime.datetime.fromtimestamp(x).strftime('%m-%d-%Y_%H-%M-%S')))
 DEFAULT_PLACE_RATING = 3.0
 
-cldist = ctypes.CDLL("./cldist.dll")
+cldist = ctypes.CDLL("cldist.dll")
+
+class JSONEncoder(json.JSONEncoder):
+  def default(self, o):
+    return o.__dict__
+
 class Place:
   def __init__(self, placeid, authkey):
     self.raw_data = self.req_place_details(placeid, authkey)
@@ -55,8 +63,6 @@ class Coordinates:
   def __str__(self):
     s = "%s,%s" % (str(self.lat), str(self.lng))
     return s
-
-origin_coords = Coordinates(42.730678, -73.686662)
 
 class Geoarea:
   def __init__(self, geodatas, delta):
@@ -183,7 +189,7 @@ def radar_request(argdict):
   for key, val in argdict.items():
     if len(val) > 0:
       url = url + '%s=%s&' % (str(key), str(val))
-      if " " in val:
+      if "+" in val:
         url = url + '%s="%s"&' % (str(key), str(val))
       else:
         url = url + '%s=%s&' % (str(key), str(val))
@@ -196,42 +202,42 @@ def radar_request(argdict):
   # Get the response and use the JSON library to decode the JSON
   json_raw = response.readall().decode('utf-8')
   json_data = json.loads(json_raw)
-  if json_data['status'] == 'OK':
+  if json_data['status'] == 'OK' and 'results' in json_data:
     return json_data['results']
-
-def load_types(typefile):
-  with open(typefile) as tf:
-    typelist = []
-    for type in tf:
-      typelist.append(type.strip())
-    return typelist
+  else:
+    raise
 
 def build_base_dict(authkey, coords, r):
   return dict(key=authkey, location=str(coords), radius=str(r))
 
-def main():
-  type_list = load_types("place_types.txt")
-
-  example_query = ["car wash", "haircut", "grocery shopping", "mail_package"]
-  radius = 10000
+def main_procedure(origin_address, query_list, radius):
+  geolocator = GoogleV3(AUTH_KEY)
+  location = geolocator.geocode(origin_address)
+  print(location)
+  origin_coords = Coordinates(location.latitude, location.longitude)
   
   radar_reqs = []
   base_dict = build_base_dict(AUTH_KEY, origin_coords, radius)
 
-  for query in example_query:
+  for query in query_list:
     qtype = query.replace(" ", "_")
     qkey = query.replace(" ", "+")
     qdict = dict(base_dict)
-    #print(type_list)
     if qtype in type_list:
       qdict["types"] = qtype
     else:
       qdict["keyword"] = qkey
     print(qdict)
-    req = radar_request(qdict)
-    fname = qtype + ".json"
+    try:
+      req = radar_request(qdict)
+    except:
+      if "keyword" in qdict:
+        tmp = qdict["keyword"]
+        qdict["keyword"] = tmp.replace("_", "+")
+        req = radar_request(qdict)
+    fname = LOG_DIR + "/" + qtype + ".json"
     with open(fname, "w") as cached:
-      cached.write(json.dumps(req))
+      cached.write(json.dumps(req, indent=2))
     geod = build_geodata(req)
     radar_reqs.append(geod)
   
@@ -247,7 +253,7 @@ def main():
     geoareas.append(Geoarea(g,d))
   
   geoareas.sort(key=lambda x: x.delta)
-  fname = fstamp(time.time()) + "_OUTPUT.TXT"
+  fname = LOG_DIR + "/" + fstamp(time.time()) + "_OUTPUT.TXT"
   
   with open(fname, "a+") as of:
     print(tstamp(time.time()), "--BEGIN--", file=of)
@@ -257,7 +263,15 @@ def main():
       print(tstamp(time.time()), str(ga), file=of)
       count = count + 1
     print(tstamp(time.time()), "--END--", file=of)
+  return json.dumps(geoareas, cls=JSONEncoder, sort_keys=True, indent=2)
 
+def main():
+  radius = 15000
+  origin = "5 clubway mount kisco ny"
+  example_query = ["car wash", "haircut", "grocery_shopping", "mail_package"]
+  json_resp = main_procedure(origin, example_query, radius)
+  with open(LOG_DIR + "/jsonresp.json", "w") as jsonresp:
+    print(json_resp, file=jsonresp)
 
 if __name__ == '__main__':
   start_time = time.time()

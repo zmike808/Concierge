@@ -5,6 +5,9 @@ from urllib.request import urlopen
 import time
 import datetime
 from geopy.geocoders import GoogleV3
+from geopy.distance import great_circle
+
+LOGGING = False
 LOG_DIR = "./logs"
 type_list = ['accounting', 'airport', 'amusement_park', 'aquarium', 'art_gallery', 'atm', 'bakery', 'bank', 'bar', 'beauty_salon', 'bicycle_store', 'book_store', 'bowling_alley', 'bus_station', 'cafe', 'campground', 'car_dealer', 'car_rental', 'car_repair', 'car_wash', 'casino', 'cemetery', 'church', 'city_hall', 'clothing_store', 'convenience_store', 'courthouse', 'dentist', 'department_store', 'doctor', 'electrician', 'electronics_store', 'embassy', 'establishment', 'finance', 'fire_station', 'florist', 'food', 'funeral_home', 'furniture_store', 'gas_station', 'general_contractor', 'grocery_or_supermarket', 'gym', 'hair_care', 'hardware_store', 'health', 'hindu_temple', 'home_goods_store', 'hospital', 'insurance_agency', 'jewelry_store', 'laundry', 'lawyer', 'library', 'liquor_store', 'local_government_office', 'locksmith', 'lodging', 'meal_delivery', 'meal_takeaway', 'mosque', 'movie_rental', 'movie_theater', 'moving_company', 'museum', 'night_club', 'painter', 'park', 'parking', 'pet_store', 'pharmacy', 'physiotherapist', 'place_of_worship', 'plumber', 'police', 'post_office', 'real_estate_agency', 'restaurant', 'roofing_contractor', 'rv_park', 'school', 'shoe_store', 'shopping_mall', 'spa', 'stadium', 'storage', 'store', 'subway_station', 'synagogue', 'taxi_stand', 'train_station', 'travel_agency', 'university', 'veterinary_care', 'zoo']
 
@@ -60,20 +63,25 @@ class Coordinates:
   def __init__(self, lat, lng):
     self.lat = lat
     self.lng = lng
+
+  def __iter__(self):
+    return iter((self.lat, self.lng))
+
   def __str__(self):
     s = "%s,%s" % (str(self.lat), str(self.lng))
     return s
 
 class Geoarea:
-  def __init__(self, geodatas, delta):
-    self.geodatas = geodatas
+  def __init__(self, geodatas, delta, origin):
+    self.geodata_list = geodatas
     self.delta = delta
     self.places = self.get_places()
     self.total_rating = self.compute_total_rating()
+    self.delta_with_origin = great_circle(origin, self.geodata_list).meters
   
   def get_places(self):
     places = []
-    for g in self.geodatas:
+    for g in self.geodata_list:
       p = Place(g.place_id, AUTH_KEY)
       places.append(p)
     return places
@@ -95,11 +103,9 @@ class Geodata:
   def __init__(self, lat, lng, id=-1, pid=-1):
     self.lat = lat
     self.lng = lng
-    #self.clat = self.lat * (math.pi * 6378137 / 180)
-    #self.clng = self.lng * (math.pi * 6378137 / 180)
     self.id = id
     self.place_id = pid
-    self.origin_dist = None #great_circle(ocords, (self.lat, self.lng)).meters
+  
   def __iter__(self):
     return iter((self.lat, self.lng))
   
@@ -118,14 +124,20 @@ def get_top_n(product, n=0):
   crds = []
   total_size = len(product)
   tuple_size = len(product[0])
-  print("tuple_size: ", tuple_size)
+  if LOGGING:
+    print("tuple_size: ", tuple_size)
+  
   stress_test = False
-  dtmp = time.time()
+  if LOGGING:
+    dtmp = time.time()
+  
   for g in product:
     for x in g:
       crds.append(x.lat)
       crds.append(x.lng)
-  print("time taken to go from megalist to x,ys...:", time.time() - dtmp)
+  
+  if LOGGING:
+    print("time taken to go from megalist to x,ys...:", time.time() - dtmp)
  
   if stress_test:
     geoareas = []
@@ -140,27 +152,33 @@ def get_top_n(product, n=0):
         print(g, file=out)
   
   crds_size = (len(crds))
-  
-  print("len crds:", crds_size, "total size: ", total_size)
+  if LOGGING:
+    print("len crds:", crds_size, "total size: ", total_size)
   
   arg1 = (ctypes.c_float * crds_size)()
   arg1[:] = crds
   outarg = (ctypes.c_float * (total_size))()
-  magictime = time.time()
-  result = cldist.compute_distance(arg1, crds_size, tuple_size, total_size, ctypes.byref(outarg))
-  new_delta = time.time() - magictime
+  if LOGGING:
+    magictime = time.time()
+    result = cldist.compute_distance(arg1, crds_size, tuple_size, total_size, ctypes.byref(outarg))
+    new_delta = time.time() - magictime
+  else:
+    result = cldist.compute_distance(arg1, crds_size, tuple_size, total_size, ctypes.byref(outarg))
+  
   if stress_test:
     with open("benchmark.txt", "a") as myf:
       print("old method took: ", old_delta, "seconds!", file=myf)
       print("OPENCL NEW BLACK MAGIC TOOK: ", new_delta, "SECONDS!", file=myf)
   
   floatlist = [outarg[i] for i in range(total_size)]
-  
-  print("flist len:", len(floatlist))
-  tstart = time.time()
-  sorted_by_dist = sorted(zip(product, floatlist), key=lambda x: x[1])
-  delta = time.time() - tstart
-  print("time taken sorting ziplist: %s seconds!" % (str(delta)))
+  if LOGGING:
+    print("flist len:", len(floatlist))
+    tstart = time.time()
+    sorted_by_dist = sorted(zip(product, floatlist), key=lambda x: x[1])
+    delta = time.time() - tstart
+    print("time taken sorting ziplist: %s seconds!" % (str(delta)))
+  else:
+    sorted_by_dist = sorted(zip(product, floatlist), key=lambda x: x[1])
 
   if n == 0:
     return sorted_by_dist
@@ -211,10 +229,15 @@ def build_base_dict(authkey, coords, r):
   return dict(key=authkey, location=str(coords), radius=str(r))
 
 def main_procedure(origin_address, query_list, radius):
-  geolocator = GoogleV3(AUTH_KEY)
-  location = geolocator.geocode(origin_address)
-  print(location)
-  origin_coords = Coordinates(location.latitude, location.longitude)
+  # check if we need to geocode
+  if isinstance(origin_address, Coordinates):
+    origin_coords = origin_address
+  else:
+    geolocator = GoogleV3(AUTH_KEY)
+    location = geolocator.geocode(origin_address)
+    if LOGGING:
+      print(location)
+    origin_coords = Coordinates(location.latitude, location.longitude)
   
   radar_reqs = []
   base_dict = build_base_dict(AUTH_KEY, origin_coords, radius)
@@ -227,7 +250,9 @@ def main_procedure(origin_address, query_list, radius):
       qdict["types"] = qtype
     else:
       qdict["keyword"] = qkey
-    print(qdict)
+    if LOGGING:
+      print(qdict)
+    
     try:
       req = radar_request(qdict)
     except:
@@ -235,41 +260,61 @@ def main_procedure(origin_address, query_list, radius):
         tmp = qdict["keyword"]
         qdict["keyword"] = tmp.replace("_", "+")
         req = radar_request(qdict)
-    fname = LOG_DIR + "/" + qtype + ".json"
-    with open(fname, "w") as cached:
-      cached.write(json.dumps(req, indent=2))
+    if LOGGING:
+      fname = LOG_DIR + "/" + qtype + ".json"
+      with open(fname, "w") as cached:
+        cached.write(json.dumps(req, sort_keys=True, indent=2))
+    
     geod = build_geodata(req)
     radar_reqs.append(geod)
   
-  print(len(radar_reqs))
-  #fp1 = ["haircut.json", "grocery.json", "car_wash.json"]
-  tstart = time.time()
-  product = list(itertools.product(*radar_reqs))
-  print("producing took: %s seconds!" % (str(time.time() - tstart)))
-  print("len product:", len(product))
+  if LOGGING:
+    print(len(radar_reqs))
+    #fp1 = ["haircut.json", "grocery.json", "car_wash.json"]
+    tstart = time.time()
+    product = list(itertools.product(*radar_reqs))
+    print("producing took: %s seconds!" % (str(time.time() - tstart)))
+    print("len product:", len(product))
+  else:
+    product = list(itertools.product(*radar_reqs))
+
   top5 = get_top_n(product, 5)
   geoareas = []
-  for g, d in top5:
-    geoareas.append(Geoarea(g,d))
+  for geotuple, dist in top5:
+    geoareas.append(Geoarea(geotuple, dist, origin_coords))
+ 
+  if LOGGING:
+    fname = LOG_DIR + "/" + fstamp(time.time()) + "_OUTPUT.TXT"
+    with open(fname, "a+") as of:
+      print(tstamp(time.time()), "--BEGIN--", file=of)
+      count = 1
+      for ga in geoareas:
+        print(tstamp(time.time()), "%s OF %s" % (str(count), str(len(top5))), file=of)
+        print(tstamp(time.time()), str(ga), file=of)
+        count = count + 1
+      print(tstamp(time.time()), "--END--", file=of)
   
-  geoareas.sort(key=lambda x: x.delta)
-  fname = LOG_DIR + "/" + fstamp(time.time()) + "_OUTPUT.TXT"
-  
-  with open(fname, "a+") as of:
-    print(tstamp(time.time()), "--BEGIN--", file=of)
-    count = 1
-    for ga in geoareas:
-      print(tstamp(time.time()), "%s OF %s" % (str(count), str(len(top5))), file=of)
-      print(tstamp(time.time()), str(ga), file=of)
-      count = count + 1
-    print(tstamp(time.time()), "--END--", file=of)
   return json.dumps(geoareas, cls=JSONEncoder, sort_keys=True, indent=2)
+
+#this is the function that should be called when a post request is submitted
+def place_query_endpoint(query_list, radius, **kwargs):
+  keys = kwargs.keys()
+  if 'lat' in keys and 'lng' in keys:
+    address = Coordinates(float(kwargs['lat']), float(kwargs['lng']))
+  elif 'address' in keys:
+    address = kwargs['address']
+  else:
+    raise error("No address or lat,lng specified, cannot determine origin location!")
+
+  return main_procedure(address, query_list, radius)
 
 def main():
   radius = 15000
   origin = "5 clubway mount kisco ny"
   example_query = ["car wash", "haircut", "grocery_shopping", "mail_package"]
+  
   json_resp = main_procedure(origin, example_query, radius)
+  
   with open(LOG_DIR + "/jsonresp.json", "w") as jsonresp:
     print(json_resp, file=jsonresp)
 
